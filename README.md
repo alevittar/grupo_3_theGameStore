@@ -51,4 +51,6 @@ Pero lo que sí les puedo asegurar es que voy a bufearme para dar lo mejor de mi
    ¿Nadie?
    Igual era broma, porque eso si me lo sé =D
 
-
+- **ignacio**
+Buenos días/tardes/noches (segun el horario en el que se lo este leyendo) , mi nombre es ignacio y formó parte del grupo 3 de la mejor comisión de digitalhouse. aqui estoy poniéndole todas las ganas para aprender todo lo que se pueda respecto a la programación con la misma energía que le estoy poniendo a la recuperación de mi rodilla (me la rompí jugando al rugby así que tengo conocimientos de scrum jajaja).
+Tengo experiencia en videojuegos no se si contara como ser  gamer y preparence para ver un gran proyecto de ecommerce
