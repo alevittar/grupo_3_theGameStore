@@ -60,5 +60,10 @@ Pero lo que sí les puedo asegurar es que voy a bufearme para dar lo mejor de mi
 Buenos días/tardes/noches (segun el horario en el que se lo este leyendo) , mi nombre es ignacio y formó parte del grupo 3 de la mejor comisión de digitalhouse. aqui estoy poniéndole todas las ganas para aprender todo lo que se pueda respecto a la programación con la misma energía que le estoy poniendo a la recuperación de mi rodilla (me la rompí jugando al rugby así que tengo conocimientos de scrum jajaja).
 Tengo experiencia en videojuegos no se si contara como ser  gamer y preparence para ver un gran proyecto de ecommerce
 
-_**Carla**
+- **Carla**
 ¡Hello teachers! quería presumir lo único que sé de inglés jaja. Me llamo Carla Ardiles,  soy parte del mejor grupo de programación que hayan visto hasta la fecha , el grupo 3.  Una amante de las letras, creadora de garabatos en mis tiempos libres y ahora,  una neófita en programación pero con todas las capacidades  para aprender y poder contribuir a mis compañeros en la construcción de un creativo y dinámico proyecto.
+
+- **Julio Alejandro**
+Hola, me pueden llamar por cualquiera de esos 2 nombres, me resulta indistinto, (aunque Alejandro es el que mas uso), creo que soy el mas viejo del grupo, y mi experiencia gamer mas cercana se remonta a Pac Man, Blockout y Arkanoid, y algo del Solitario y el Buscaminas que venia en la version de Windows 95, desde ahi para adelante no tengo experiencia como gamer, de todos modos tengo contactos con asesores externos especialistas en la materia, (2 sobrinos adolescentes podrian pasarse la vida encerrados en una pieza frente a un monitor jugando sin darse cuenta si afuera hay guerra, terremoto, inundaciones, o algo por el estilo).
+Estoy bastante motivado con el desafio que significa aprender a desarrollar un ecommerce y dispuesto colaborar con el grupo en la tarea que me toque.
+Para aprender estoy aqui, y para despedirme les comparto una frase que tiene que ver con eso..... **"Ser ignorante no es tanta vergüenza como no tener la voluntad de aprender. Benjamin Franklin"**.
