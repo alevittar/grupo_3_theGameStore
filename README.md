@@ -33,11 +33,11 @@ El público objetivo de nuestro eCommerce se puede dividir en los siguientes gru
 1. **COMPRA GAMER** : https://compragamer.com/
    La seleccionamos por la dinámica simple pero con gran estilo del sitio web.Cada una de sus secciones demuestran buena organización y sencillez en su constitución. Es un gran ejemplo de un wireframe sencillo y completo.
 2. **FULL H4RD** : https://www.fullh4rd.com.ar/
-   Este referente, es importante para nosotros por su variedad de opciones y navegación. Es otra manera de organizar mas compleja pero atractiva para el cliente. Enriquece nuestra creatividad, variando su constitución con el anterior.
+   Este referente, es importante para nosotros por su variedad de opciones y navegación. Es otra manera de organizar más compleja pero atractiva para el cliente. Enriquece nuestra creatividad, variando su constitución con el anterior.
 3. **XT-PC** :  https://www.xt-pc.com.ar/
-   Un sitio sencillo, dinámico. Nos muestra una excelente presentación de productos y sus cracterísticas sintéticas y organizadas. 
+   Un sitio sencillo, dinámico. Nos muestra una excelente presentación de productos y sus características sintéticas y organizadas. 
 4. **MEXX** :  https://www.mexx.com.ar/
-   En general es una página simple. resaltamos su carrusel, completo y de gran estética que resalta de toda la configuración global.
+   En general es una página simple. Resaltamos su carrusel, completo y de gran estética que resalta de toda la configuración global.
 3. **MAXIMUS** :  https://www.maximus.com.ar/
    Nos parece un gran sitio para observar la creatividad en el diseño de cada sección, paleta de colores, imágenes y diseño organizacional.
 
@@ -61,7 +61,7 @@ Buenos días/tardes/noches (segun el horario en el que se lo este leyendo) , mi 
 Tengo experiencia en videojuegos no se si contara como ser  gamer y preparence para ver un gran proyecto de ecommerce
 
 - **Carla**
-¡Hello teachers! quería presumir lo único que sé de inglés jaja. Me llamo Carla Ardiles,  soy parte del mejor grupo de programación que hayan visto hasta la fecha , el grupo 3.  Una amante de las letras, creadora de garabatos en mis tiempos libres y ahora,  una neófita en programación pero con todas las capacidades  para aprender y poder contribuir a mis compañeros en la construcción de un creativo y dinámico proyecto.
+¡Hello teachers! quería presumir lo único que sé de inglés jaja. Me llamo Carla Ardiles,  soy parte del mejor grupo de programación que hayan visto hasta la fecha, el grupo 3.  Una amante de las letras, creadora de garabatos en mis tiempos libres y ahora,  una neófita en programación pero con todas las capacidades  para aprender y poder contribuir a mis compañeros en la construcción de un creativo y dinámico proyecto.
 
 - **Julio Alejandro**
 Hola, me pueden llamar por cualquiera de esos 2 nombres, me resulta indistinto, (aunque Alejandro es el que mas uso), creo que soy el mas viejo del grupo, y mi experiencia gamer mas cercana se remonta a Pac Man, Blockout y Arkanoid, y algo del Solitario y el Buscaminas que venia en la version de Windows 95, desde ahi para adelante no tengo experiencia como gamer, de todos modos tengo contactos con asesores externos especialistas en la materia, (2 sobrinos adolescentes podrian pasarse la vida encerrados en una pieza frente a un monitor jugando sin darse cuenta si afuera hay guerra, terremoto, inundaciones, o algo por el estilo).
