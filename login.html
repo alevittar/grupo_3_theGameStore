@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="../grupo_3_theGameStore/public/styles.css" rel="stylesheet"/>
+    <link href="loginStyles.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+
+    <title>Inicio de Sesión</title>
+  </head>
+  <body>
+    <header class="contenedor">
+      <div id="top-header">
+        <div id="logo">
+          <img src="public/img/logo.png" alt="Logo de TheGameStore" />
+        </div>
+        <div id="search-bar">
+          <input type="text" placeholder="Buscar..." />
+          <button type="submit">Buscar</button>
+        </div>
+        <div id="icons">
+          <a href="#">
+            <img src="public/img/localizacion.png" alt="localizacion" />
+          </a>
+          <a href="#">
+            <img src="public/img/usuario.png" alt="user" />
+          </a>
+          <a href="#">
+            <img src="public/img/burbuja-de-dialogo.png" alt="chat" />
+          </a>
+          <a href="#">
+            <img src="public/img/carrito-de-compras.png" alt="carrito-de-compras" />
+          </a>
+          <a href="#">
+            <img src="public/img/entrega.png" alt="envio" />
+          </a>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Calcular envio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <form class="loginForm" action="" method="get">
+        <h2 id="title">Inicio de sesión</h2>
+        <br />
+
+        <input
+          type="email"
+          name="mail"
+          id="correo"
+          placeholder="Correo Electrónico"
+          required
+        />
+        <br />
+
+        <input
+          type="password"
+          name="pass"
+          id="clave"
+          placeholder="Contraseña"
+          required
+        />
+        <br />
+
+        <button type="submit">Iniciar Sesión</button> <br />
+      </form>
+
+      <p id="signUp">
+        <a href="">Cree una cuenta</a>
+      </p>
+
+      <p id="resetPass">
+        <a href="">¿Olvidó su contraseña?</a>
+      </p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-section">
+        <h4>Medios de pago</h4>
+        <div class="formas-pagos">
+          <a href="#" class="formas-pago"
+            ><img src="public/img/visa.png" alt="tarjeta visa"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="public/img/master.png" alt="mastercard"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="public/img/amex.png" alt="amex card"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="public/img/paypal.png" alt="paypal"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="public/img/gpay.png" alt="gpay"
+          /></a>
+        </div>
+      </div>
+      <!-- Contenido de la sección de redes sociales -->
+      <div class="footer-section">
+        <h4>Síguenos en nuestras redes</h4>
+        <div class="social-icons">
+          <a href="#" class="social-icon"
+            ><img src="public/img/pngwing.com.png" alt="Facebook"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="public/img/x.png" alt="Twitter"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="public/img/instagram.png" alt="Instagram"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="public/img/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
