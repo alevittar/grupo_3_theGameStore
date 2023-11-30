@@ -1,0 +1,110 @@
+.contenedor-general{
+    background-color: gray;
+    width: 90%;
+    color: black;
+    text-align: center;
+    align-items: center;
+}
+
+ .titulo{
+    color: rgb(2, 19, 38);
+    font-size: 30px;
+ }
+
+ /********* INCIO DE REGLAS PARA EL CONTENEDOR DE PRODUCTOS ********/
+ .contenedor-producto{
+   display: flex;
+    background-color: antiquewhite;
+    width: 90%;
+    padding: 20px;
+ }
+
+ .foto-producto{
+    width: 40%;
+    padding: 10px;
+ }
+
+ .articulo{
+   align-items: center;
+   width: 60%;
+   padding: 10px;
+}
+
+.nombre-producto{
+   color: black;
+   font-size: 30px;
+   font-weight: bold;
+}
+
+
+.descripcion-producto{
+   color: gray;
+   font-size: 20px;
+}
+
+.calificacion-producto{
+   color: red;
+   font-size: 40px;
+}
+
+
+ /********* FIN DE REGLAS PARA EL CONTENEDOR DE PRODUCTOS ********/
+
+
+/********* INICIO DE REGLAS PARA EL CONTENEDOR DE DATOS DE ENVIO ********/
+
+.datos-de-envio{
+   background-color: indianred;
+   display: flex;
+   width: 90%;
+   padding: 20px;
+}
+
+.codigo-postal{
+width: 40%;
+padding: 10px;
+}
+
+.costo-de-envio{
+width: 40%;
+padding: 10px;
+}
+
+.punto-de-retiro{
+width: 40%;
+padding: 10px;
+}
+
+.total{
+width: 40%;
+padding: 10px;
+}
+
+
+/********* FIN DE REGLAS PARA EL CONTENEDOR DE DATOS DE ENVIO ********/
+
+
+/********* INICIO DE REGLAS PARA EL CONTENEDOR DE REALIZAR PAGO ********/
+
+.pagar{
+
+       /*display: flex;*/
+       background-color: antiquewhite;
+       width: 90%;
+       padding: 20px;
+}
+
+.metodo-de-pago{
+   align-items: center;
+   padding: 10px;
+}
+
+.boton-de-pagar{
+   align-items: center;
+   padding: 10px;
+}
+
+/********* FIN DE REGLAS PARA EL CONTENEDOR DE REALIZAR PAGO ********/
+
+
+

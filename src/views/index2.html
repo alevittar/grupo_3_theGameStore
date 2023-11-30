@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>TheGameStore</title>
+  </head>
+  <body>
+    <header class="contenedor">
+      <div id="top-header">
+        <div id="logo">
+          <img src="/img/logo.png" alt="Logo de TheGameStore" />
+        </div>
+        <div id="search-bar">
+          <input type="text" placeholder="Buscar..." />
+          <button type="submit">Buscar</button>
+        </div>
+        <div id="icons">
+          <a href="#">
+            <img src="/img/localizacion.png" alt="localizacion" />
+          </a>
+          <a href="#">
+            <img src="/img/usuario.png" alt="user" />
+          </a>
+          <a href="#">
+            <img src="/img/burbuja-de-dialogo.png" alt="chat" />
+          </a>
+          <a href="#">
+            <img src="/img/carrito-de-compras.png" alt="carrito-de-compras" />
+          </a>
+          <a href="#">
+            <img src="/img/entrega.png" alt="envio" />
+          </a>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Calcular envio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide">
+            <img
+              class="img-carru"
+              src="/img/22-08-2023-10-08-29-Banner 1 (1).jpg"
+              alt="Imagen 1"
+            />
+          </div>
+          <div class="slide">
+            <img
+              class="img-carru"
+              src="/img/4kinggstonnuevo (1).jpg"
+              alt="Imagen 2"
+            />
+          </div>
+          <div class="slide">
+            <img class="img-carru" src="/img/alanwaque.jpg" alt="Imagen 3" />
+          </div>
+        </div>
+        <button id="prev">Anterior</button>
+        <button id="next">Siguiente</button>
+      </div>
+
+      <!-- Sección de artículos más vendidos -->
+      <section id="mas-vendidos">
+        <h2>Artículos más vendidos</h2>
+        <div class="articulos">
+          <a href="#">
+            <div class="producto">
+              <img src="/img/producto1.jpeg" alt="Producto 1" />
+              <div class="cont-precio">
+                <h3>Nombre del Producto 1</h3>
+                <p>Precio: $XX.XX</p>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+          <div class="producto">
+            <img src="/img/producto2.jpeg" alt="Producto 2" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 2</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto">
+            <img src="/img/producto3.jpeg" alt="Producto 3" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 3</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto">
+            <img src="/img/producto4.jpeg" alt="Producto 4" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 4</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto">
+            <img src="/img/producto5.jpeg" alt="Producto 5" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 5</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        </div>
+      </section>
+
+      <!-- Sección de productos destacados -->
+      <section id="destacados">
+        <h2>Productos destacados</h2>
+        <div class="productos-destacados">
+          <a href="#">
+          <div class="producto-destacado">
+            <img src="/img/producto1.jpeg" alt="Producto 1" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 1</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto-destacado">
+            <img src="/img/producto2.jpeg" alt="Producto 2" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 2</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto-destacado">
+            <img src="/img/producto3.jpeg" alt="Producto 3" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 3</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto-destacado">
+            <img src="/img/producto4.jpeg" alt="Producto 4" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 4</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="producto-destacado">
+            <img src="/img/producto5.jpeg" alt="Producto 5" />
+            <div class="cont-precio">
+              <h3>Nombre del Producto 5</h3>
+              <p>Precio: $XX.XX</p>
+            </div>
+          </div>
+        </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-section">
+        <h4>Medios de pago</h4>
+        <div class="formas-pagos">
+          <a href="#" class="formas-pago"
+            ><img src="/img/visa.png" alt="tarjeta visa"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="/img/master.png" alt="mastercard"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="/img/amex.png" alt="amex card"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="/img/paypal.png" alt="paypal"
+          /></a>
+          <a href="#" class="formas-pago"
+            ><img src="/img/gpay.png" alt="gpay"
+          /></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Síguenos en nuestras redes</h4>
+        <div class="social-icons">
+          <a href="#" class="social-icon"
+            ><img src="/img/pngwing.com.png" alt="Facebook"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="/img/x.png" alt="Twitter"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="/img/instagram.png" alt="Instagram"
+          /></a>
+          <a href="#" class="social-icon"
+            ><img src="/img/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+        <!-- Contenido de la sección de redes sociales -->
+      </div>
+    </footer>
+
+    <script src="./carru.js"></script>
+  </body>
+</html>
