@@ -11,7 +11,7 @@
     font-size: 30px;
  }
 
- /********* INCIO DE REGLAS PARA EL CONTENEDOR DE PRODUCTOS ********/
+
  .contenedor-producto{
    display: flex;
     background-color: antiquewhite;
@@ -48,10 +48,7 @@
 }
 
 
- /********* FIN DE REGLAS PARA EL CONTENEDOR DE PRODUCTOS ********/
 
-
-/********* INICIO DE REGLAS PARA EL CONTENEDOR DE DATOS DE ENVIO ********/
 
 .datos-de-envio{
    background-color: indianred;
@@ -81,10 +78,7 @@ padding: 10px;
 }
 
 
-/********* FIN DE REGLAS PARA EL CONTENEDOR DE DATOS DE ENVIO ********/
 
-
-/********* INICIO DE REGLAS PARA EL CONTENEDOR DE REALIZAR PAGO ********/
 
 .pagar{
 
@@ -104,7 +98,6 @@ padding: 10px;
    padding: 10px;
 }
 
-/********* FIN DE REGLAS PARA EL CONTENEDOR DE REALIZAR PAGO ********/
 
 
 

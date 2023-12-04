@@ -1,28 +1,21 @@
+
 const express = require('express');
 const app = express();
-const path = require ("path")
-const PORT =3030;
+const path = require('path');
+const routes = require('./routes/routes');
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static('./public'));
 
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve("./views/index.html")); 
-  });
+app.set('view engine', 'ejs');
 
-app.listen(PORT , () => {
-    console.log("Servidor funcionando")
-})
+app.set('views', __dirname + '/views');
 
-app.get("/register", (req, res) => {
-  res.sendFile(path.resolve("./views/users/register.html")); 
+app.use(express.static(path.join(__dirname, '../public')));
+
+
+// Uso de  las rutas
+app.use(routes);
+
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
-
-app.get("/login", (req, res) => {
-  res.sendFile(path.resolve("./views/users/login.html")); 
-});
-
-
-app.get("/carrito", (req, res) => {
-  res.sendFile(path.resolve("./views/products/carrito.html")); 
-});
-
