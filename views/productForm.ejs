@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/productForm.css">
+    <title>Panel de Administrador</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Panel de Administrador</h1>
+        <form action="#" method="post" class="admin-form">
+            <label for="name">Nombre del Producto:</label>
+            <select id="category" name="category" required>
+                <option value="category1">Producto 1</option>
+                <option value="category2">Producto 2</option>
+                <option value="category3">Producto 3</option>
+            </select>
+            
+                <button type="button" class="add-edit-btn">Añadir</button>
+            
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="image">Imagen:</label>
+            <div class="image-container">
+                <input type="url" id="image" name="image" required>
+                <button type="button" class="add-image-btn">Añadir Imagen</button>
+            </div>
+
+            <label for="category">Categoría:</label>
+            <div class="category-container">
+                <select id="category" name="category" required>
+                    <option value="category1">Categoría 1</option>
+                    <option value="category2">Categoría 2</option>
+                    <option value="category3">Categoría 3</option>
+                </select>
+                
+            </div>
+
+            <label for="colors">Colores:</label>
+            <div class="color-container">
+                <select id="colors" name="colors" required>
+                    <option value="red">Rojo</option>
+                    <option value="blue">Azul</option>
+                    <option value="green">Verde</option>
+                </select>
+                
+            </div>
+
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+
+            <button type="submit">Guardar Producto</button>
+        </form>
+    </div>
+</body>
+</html>
