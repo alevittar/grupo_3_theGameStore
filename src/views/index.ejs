@@ -11,46 +11,7 @@
     <title>TheGameStore</title>
   </head>
   <body>
-    <header class="contenedor">
-      <div id="top-header">
-        <div id="logo">
-          <a href="/">
-              <img src="/img/logo.png" alt="Logo de TheGameStore" />
-          </a>
-      </div>
-        <div id="search-bar">
-          <input type="text" placeholder="Buscar..." />
-          <button type="submit">Buscar</button>
-        </div>
-        <div id="icons">
-          <a href="#">
-            <img src="/img/localizacion.png" alt="localizacion" />
-          </a>
-          <a href="/login">
-            <img src="/img/usuario.png" alt="user" />
-          </a>
-          <a href="#">
-            <img src="/img/burbuja-de-dialogo.png" alt="chat" />
-          </a>
-          <a href="/carrito">
-            <img src="/img/carrito-de-compras.png" alt="carrito-de-compras" />
-          </a>
-          <a href="#">
-            <img src="/img/entrega.png" alt="envio" />
-          </a>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Categorias</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Calcular envio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="#">Ayuda</a></li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('./partials/header') %>
 
     <!-- Main content -->
     <main>
