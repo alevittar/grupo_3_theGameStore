@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const mainRouter = require('../Routers/mainRouter.js');
+const mainRouter = require('./routes/mainRouter.js');
+const cartRouter = require('./routes/cartRoutes.js');
+const productsRouter = require('./routes/productsRoutes.js');
 
 let pathPublic = path.resolve("public");
 app.use(express.static(pathPublic));
@@ -18,6 +20,8 @@ app.listen(PORT, () =>{
 });
 
 app.use('/', mainRouter);
+app.use('/cart', cartRouter);
+app.use('/products', productsRouter);
 
 // app.get("/", (req, res)=>{
 //     let productFormHtml = path.resolve(__dirname, "./views/productForm.html");
