@@ -1,56 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('./partials/head') %>
 
-    <link href="css/styles.css" rel="stylesheet"/>
-    <link href="css/loginStyles.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
-
-    <title>Inicio de Sesión</title>
-  </head>
   <body>
-    <header class="contenedor">
-      <div id="top-header">
-        <div id="logo">
-          <a href="/">
-              <img src="/img/logo.png" alt="Logo de TheGameStore" />
-          </a>
-      </div>
-        <div id="search-bar">
-          <input type="text" placeholder="Buscar..." />
-          <button type="submit">Buscar</button>
-        </div>
-        <div id="icons">
-          <a href="#">
-            <img src="/img/localizacion.png" alt="localizacion" />
-          </a>
-          <a href="#">
-            <img src="/img/usuario.png" alt="user" />
-          </a>
-          <a href="#">
-            <img src="/img/burbuja-de-dialogo.png" alt="chat" />
-          </a>
-          <a href="#">
-            <img src="/img/carrito-de-compras.png" alt="carrito-de-compras" />
-          </a>
-          <a href="#">
-            <img src="/img/entrega.png" alt="envio" />
-          </a>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Categorias</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Calcular envio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Ayuda</a></li>
-        </ul>
-      </nav>
-    </header>
-
+    <%- include('./partials/header.ejs') %>
     <!-- Main content -->
     <main>
       <form class="loginForm" action="" method="get">
@@ -88,45 +41,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-      <div class="footer-section">
-        <h4>Medios de pago</h4>
-        <div class="formas-pagos">
-          <a href="#" class="formas-pago"
-            ><img src="/img/visa.png" alt="tarjeta visa"
-          /></a>
-          <a href="#" class="formas-pago"
-            ><img src="/img/master.png" alt="mastercard"
-          /></a>
-          <a href="#" class="formas-pago"
-            ><img src="/img/amex.png" alt="amex card"
-          /></a>
-          <a href="#" class="formas-pago"
-            ><img src="/img/paypal.png" alt="paypal"
-          /></a>
-          <a href="#" class="formas-pago"
-            ><img src="/img/gpay.png" alt="gpay"
-          /></a>
-        </div>
-      </div>
-      <!-- Contenido de la sección de redes sociales -->
-      <div class="footer-section">
-        <h4>Síguenos en nuestras redes</h4>
-        <div class="social-icons">
-          <a href="#" class="social-icon"
-            ><img src="/img/pngwing.com.png" alt="Facebook"
-          /></a>
-          <a href="#" class="social-icon"
-            ><img src="/img/x.png" alt="Twitter"
-          /></a>
-          <a href="#" class="social-icon"
-            ><img src="/img/instagram.png" alt="Instagram"
-          /></a>
-          <a href="#" class="social-icon"
-            ><img src="/img/linkedin.png" alt="LinkedIn"
-          /></a>
-        </div>
-      </div>
-    </footer>
+    <%- include('./partials/footer') %>
+
   </body>
 </html>
