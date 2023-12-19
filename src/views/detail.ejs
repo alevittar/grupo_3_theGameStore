@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/head') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles1.css" type="text/css" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>TheGameStore</title>
+  </head>
 
   <body>
     <%- include('./partials/header') %>
@@ -14,7 +25,7 @@
 <main>
   <div class="product-name">
     <h2>CATEGORÍA<i class="fa-solid fa-angle-right" style="color: #070707;"></i>Subcategoría<i class="fa-solid fa-angle-right" style="color: #060606;"></i>Producto</h2>
-    <h1 >Mother Asrock Z390 Phantom Gaming 4S</h1>
+    <h1 ><%= product.name %></h1>
   </div>
   <section class="content">
     
@@ -22,7 +33,7 @@
     <article class="gallery">
      
       <div class="gallery__image-container">
-        <i class="fa-solid fa-angle-left" style="color: #0c0c0c;"></i><img src="../img/motherintel.jpg" alt="motherintel"><i class="fa-solid fa-angle-right" style="color: #0e0d0d;"></i>
+        <i class="fa-solid fa-angle-left" style="color: #0c0c0c;"></i><img src="/img/<%=product.image %>" alt="motherintel"><i class="fa-solid fa-angle-right" style="color: #0e0d0d;"></i>
       </div>
     
       <div class="gallery__thumnails">
@@ -37,8 +48,8 @@
           <p class="extra">Plataforma INTEL</p>
           <p class="extra"> Socket 1151 Coffe Lake</p>
           <p class="extra">Chipsets Principal Intel Z390</p>
-          <P class="price"> <i class="fa-solid fa-hand-holding-dollar" style="color: #472e76;"></i> </i>$85599</p><i class="fa-solid fa-circle-exclamation fa-beat-fade" style="color: #331f51;"></i>
-          <p class="sale">$ 98750</p>
+          <P class="price"> <i class="fa-solid fa-hand-holding-dollar" style="color: #472e76;"></i> </i>$<%= product.price %></p><i class="fa-solid fa-circle-exclamation fa-beat-fade" style="color: #331f51;"></i>
+          <p class="sale"> $<%= product.price %></p>
       <div class="reviews">
         <p class="valoraciones">4,5</p>
         <button class="btn_ranking">
@@ -126,7 +137,15 @@
   </article>
 
 </section>
-  
+<div class="buttons-container">
+  <!-- Botón para eliminar -->
+	<form action="/products/<%= product.id %>/delete/?_method=DELETE" method="POST" style="display: inline-flex">
+    <button type="submit" class="action-button delete">BORRAR</button>
+  </form>
+
+  <!-- Botón para ir a la vista de edición -->
+  <a href="/products/edit/<%= product.id %>" class="edit-button">Editar producto</a>
+</div>
 
 </main>
       

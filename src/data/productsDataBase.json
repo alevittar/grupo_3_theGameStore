@@ -142,5 +142,14 @@
     "category": "ofertas",
     "stock": "18",
     "price": "23.100"
+  },
+  {
+    "id": 17,
+    "name": "pc gamer",
+    "price": "700.000",
+    "category": "ofertas",
+    "stock": "2",
+    "description": "pc gamer de ultima generación con gráficos integrados",
+    "image": "1702994491398pc.jpg"
   }
 ]

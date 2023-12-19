@@ -15,25 +15,25 @@
   <body>
     <div class="container">
       <h1>Panel de Administrador</h1>
-      <form action="/products/" method="POST" enctype="multipart/form-data">
-          <label for="name" class="form-label">Nombre del producto:</label>
-          <input type="text" id="name" name="name" placeholder="Ej: Pc Gamer" class="form-input">
+      <form action="/products/<%= product.id %>/?_method=PUT" method="POST">
+          <label for="name" class="form-label">Editando: <%= product.name %></label>
+          <input type="text" id="name" name="name" value="<%= product.name %>" class="form-input">
 
           <label for="price" class="form-label">Precio del producto:</label>
-          <input type="text" id="price" name="price" placeholder="$ Precio" class="form-input">
+          <input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
 
           <label for="stock" class="form-label">Cantidad:</label>
-          <input type="text" id="stock" name="stock" placeholder="Cantidad disponible" class="form-input">
+          <input type="text" id="stock" name="stock" value="<%= product.stock %>" class="form-input">
 
           <label for="category" class="form-label">Categoría:</label>
           <select name="category" id="category" class="form-input">
-            <option value="">Elegí</option>
-            <option value="ofertas">Oferta</option>
-            <option value="populares">Popular</option>
+            <option value="" <% if (product.category === "") { %> selected <% } %>>Elegí</option>
+            <option value="ofertas" <% if (product.category === "ofertas") { %> selected <% } %>>Oferta</option>
+            <option value="populares" <% if (product.category === "populares") { %> selected <% } %>>Popular</option>
           </select>
 
           <label for="description" class="form-label">Descipción:</label>
-          <textarea name="description" id="description" class="form-input"></textarea>
+          <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
 
           <label for="image" class="form-label">Imagen del producto:</label>
           <input type="file" id="image" name="image" class="form-input">

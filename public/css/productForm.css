@@ -1,65 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Reset de estilos */
+* {
     margin: 0;
     padding: 0;
-}
-
-.container {
+    box-sizing: border-box;
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
+    margin-bottom: 20px;
     color: #333;
-}
-
-.admin-form {
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
-}
-
-label {
-    margin-bottom: 8px;
-}
-
-input,
-textarea,
-select {
-    padding: 10px;
-    margin-bottom: 16px;
+  }
+  
+  .form-label {
+    margin-top: 10px;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-button {
+  }
+  
+  .buy-now-button {
     background-color: #7400b8;
     color: #fff;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #7400b8;
-}
-
-.color-container {
-    display: flex;
-    position: relative;
-}
-
-.color-arrows {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
+  }
+  
+  .buy-now-button:hover {
+    background-color: #45a049;
+  }
+  

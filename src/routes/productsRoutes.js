@@ -1,14 +1,30 @@
-// Rutas para CRUD de productos 
+//productsRoutes
 
-const controller = require("../controllers/mainControllers.js");
-const productControllers = require('../controllers/productsControllers.js')
-const express = require("express");
+// ************ Require's ************
+const express = require('express');
 const router = express.Router();
 
+// ************ Controller Require ************
+const productsController = require('../controllers/productsControllers');
 
 
-router.get("/formulario", productControllers.productForm);
-router.get('/', productControllers.showProductPage);
+/*** GET ALL PRODUCTS ***/ 
+router.get('/', productsController.index); 
 
+/*** CREATE ONE PRODUCT ***/ 
+router.get('/create', productsController.create); 
+router.post('/', productsController.store); 
+
+/*** GET ONE PRODUCT ***/ 
+router.get('/detail/:id', productsController.detail); 
+
+
+/*** EDIT ONE PRODUCT ***/ 
+router.get('/edit/:id', productsController.edit); 
+router.put('/:id', productsController.update); 
+
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/:id/delete', productsController.destroy); 
 
 module.exports = router;
+
