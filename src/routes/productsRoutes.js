@@ -11,15 +11,15 @@ const productsController = require('../controllers/productsControllers');
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index); 
 
-/*** CREATE ONE PRODUCT ***/ 
+/*** CREATE PRODUCT ***/ 
 router.get('/create', productsController.create); 
 router.post('/', productsController.store); 
 
-/*** GET ONE PRODUCT ***/ 
+/*** GET PRODUCT ***/ 
 router.get('/detail/:id', productsController.detail); 
 
 
-/*** EDIT ONE PRODUCT ***/ 
+/*** EDIT PRODUCT ***/ 
 router.get('/edit/:id', productsController.edit); 
 router.put('/:id', productsController.update); 
 

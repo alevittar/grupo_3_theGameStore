@@ -8,22 +8,15 @@ const router = express.Router();
 const usersController = require('../controllers/usersControllers');
 
 
-/*** GET ALL PRODUCTS ***/ 
-router.get('/', productsController.index); 
+/*** get users - all ***/ 
+//router.get('/', productsController.index); 
 
-/*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
-router.post('/', productsController.store); 
+/*** create users***/ 
+router.get('/create', usersController.create); 
+//router.post('/', usersController.store); 
 
-/*** GET ONE PRODUCT ***/ 
-router.get('/detail/:id', productsController.detail); 
+/*** get user ***/ 
+//router.get('/detail/:id', productsController.detail); 
 
-
-/*** EDIT ONE PRODUCT ***/ 
-router.get('/edit/:id', productsController.edit); 
-router.put('/:id', productsController.update); 
-
-/*** DELETE ONE PRODUCT***/ 
-router.delete('/:id/delete', productsController.destroy); 
 
 module.exports = router;
