@@ -6,6 +6,7 @@ const app = express();
 const mainRouter = require('./routes/mainRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
 const productsRouter = require('./routes/productsRoutes.js');
+const usersRouter = require('./routes/usersRoutes.js');
 const methodOverride =  require('method-override');
 
 let pathPublic = path.resolve("public");
@@ -30,6 +31,7 @@ app.listen(PORT, () =>{
 app.use('/', mainRouter);
 app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
+app.use('/users',usersRouter);
 
 app.get("/", (req, res)=>{
     let productFormHtml = path.resolve(__dirname, "./views/productForm.html");
