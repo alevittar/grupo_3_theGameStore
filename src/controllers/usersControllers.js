@@ -4,6 +4,7 @@ const { Console } = require("console");
 const fs = require("fs");
 const path = require("path");
 const multer = require('multer');
+const bcrypt = require("bcryptjs");
 
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
@@ -44,7 +45,7 @@ const controller = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.password,
+        password: bcrypt.hashSync(req.body.password, 12),
         category: req.body.category,
         image: req.file ? req.file.filename : null,
       };
