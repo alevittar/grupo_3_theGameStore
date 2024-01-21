@@ -29,8 +29,38 @@ const controller = {
   // Create - Form to create
   create: (req, res) => {
     res.render("userForm");
+  },
+
+ store: (req, res) => {
+  try {
+    upload.single('image')(req, res, (err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Error en la subida del archivo');
+      }
+
+      const newUser = {
+        id: users[users.length - 1].id + 1,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+        category: req.body.category,
+        image: req.file ? req.file.filename : null,
+      };
+
+      users.push(newUser);
+
+      fs.writeFileSync(usersFilePath, JSON.stringify(users));
+      res.redirect("/");
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
   }
-};
+}
+}
+
 
 
 module.exports = controller;

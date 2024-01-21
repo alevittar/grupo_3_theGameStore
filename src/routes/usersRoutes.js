@@ -13,7 +13,7 @@ const usersController = require('../controllers/usersControllers');
 
 /*** create users***/ 
 router.get('/create', usersController.create); 
-//router.post('/', usersController.store); 
+router.post('/', usersController.store); 
 
 /*** get user ***/ 
 //router.get('/detail/:id', productsController.detail); 
