@@ -1,1 +1,65 @@
-[{"id":1,"firstName":"Mercedes Lucía","lastName":"Nazarchuk","email":"Mercedes.N.1980@gmail.com","password":"mena0891","category":"administrador","image":"user_profile_1.png"},{"id":2,"firstName":"Juan","lastName":"González","email":"Juan_González23@gmail.com","password":"JG20.07.95","category":"cliente","image":"user_profile_2.png"},{"id":3,"firstName":"","lastName":"","email":"","password":"","category":"cliente","image":null},{"id":4,"firstName":"cacho","lastName":"perez","email":"22qq@mail.com","password":"clavedecacho","category":"administrador","image":"170584101858320200610_125839.jpg"},{"id":5,"firstName":"Horacio","lastName":"Guarany","email":"horaciopueblo@mail.com","password":"$2a$12$1T1HSg88IFvF6TVfaHHooOE7XFW5JqxGC3bJbVj.sjKwr2yYNw/SG","category":"administrador","image":"170584638032720200904_192534.jpg"},{"id":6,"firstName":"Andres","lastName":"Calamaro","email":"andresitocalamaro@gmail.com","password":"$2a$12$uRNsB/KeOssYSwlDn7REX.CJbPBswuag0jaGU85F5N2f54LRceAKC","category":"cliente","image":"1705846658654IMG_20190702_204601199.jpg"}]
+[
+    {
+        "id": 1,
+        "firstName": "Mercedes Lucía",
+        "lastName": "Nazarchuk",
+        "email": "Mercedes.N.1980@gmail.com",
+        "password": "mena0891",
+        "category": "administrador",
+        "image": "user_profile_1.png"
+    },
+    {
+        "id": 2,
+        "firstName": "Juan",
+        "lastName": "González",
+        "email": "Juan_González23@gmail.com",
+        "password": "JG20.07.95",
+        "category": "cliente",
+        "image": "user_profile_2.png"
+    },
+    {
+        "id": 3,
+        "firstName": "",
+        "lastName": "",
+        "email": "",
+        "password": "",
+        "category": "cliente",
+        "image": null
+    },
+    {
+        "id": 4,
+        "firstName": "cacho",
+        "lastName": "perez",
+        "email": "22qq@mail.com",
+        "password": "clavedecacho",
+        "category": "administrador",
+        "image": "170584101858320200610_125839.jpg"
+    },
+    {
+        "id": 5,
+        "firstName": "Horacio",
+        "lastName": "Guarany",
+        "email": "horaciopueblo@mail.com",
+        "password": "$2a$12$1T1HSg88IFvF6TVfaHHooOE7XFW5JqxGC3bJbVj.sjKwr2yYNw/SG",
+        "category": "administrador",
+        "image": "170584638032720200904_192534.jpg"
+    },
+    {
+        "id": 6,
+        "firstName": "Andres",
+        "lastName": "Calamaro",
+        "email": "andresitocalamaro@gmail.com",
+        "password": "$2a$12$uRNsB/KeOssYSwlDn7REX.CJbPBswuag0jaGU85F5N2f54LRceAKC",
+        "category": "cliente",
+        "image": "1705846658654IMG_20190702_204601199.jpg"
+    },
+    {
+        "id": 7,
+        "firstName": "pedro",
+        "lastName": "juarez",
+        "email": "pedro@correo.com",
+        "password": "$2a$12$FnmrB5tyHsf3lepRBfBn2.7HW.XwfjBJsyNjNOy2EBy5QIavBTkzK",
+        "category": "cliente",
+        "image": "170597207796420200610_125822.jpg"
+    }
+]
