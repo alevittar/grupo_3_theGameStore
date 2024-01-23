@@ -27,6 +27,13 @@
         </a>
       </div>
     </div>
+    <div id="user-container">
+      <% if (typeof usuario !== 'undefined') { %>
+        <% console.log('Usuario en la vista:', usuario) %>
+        <!-- Código que solo se mostrará si hay un usuario logueado -->
+        <p><%= usuario.nombre %> <%= usuario.apellido %></p>
+      <% } %>
+    </div>
     <nav>
       <ul>
         <li><a href="#">Categorias</a></li>

@@ -360,6 +360,12 @@ a {
     width: 30px;
     height: 30px;
   }
+  #user-container {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+  }
+  
 }
 @media (min-width: 381px) {
     .carousel-container {
@@ -446,7 +452,13 @@ a {
     width: 100%;
     height: auto;
   }
-
+  #user-container {
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    margin-right: 10%;
+  }
+  
   }
 @media (min-width: 769px) {
     header{
@@ -496,4 +508,16 @@ nav ul li{
       max-width: 90%;
       height: auto;
     }
+  
+    
+}
+@media screen and (min-width: 990px) {
+  #user-container {
+    position: relative;
+    top: -150px; /* Ajusta la posición vertical según tus necesidades */
+    margin-right: 5%; /* Ajusta la posición horizontal según tus necesidades */
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+  }
 }
