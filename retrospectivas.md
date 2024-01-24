@@ -105,3 +105,29 @@ Este informe refleja la retrospectiva del Sprint 2 llevado a cabo por nuestro eq
 - Continuar comunicándose de forma activa y fomentando el intercambio de opiniones en el grupo.
 
 - Este informe  resume las conclusiones obtenidas durante la retrospectiva del sprint, proporcionando orientación sobre las acciones a tomar para mejorar el rendimiento y la colaboración del equipo.
+
+
+# Informe Sprint 4 - Metodología Scrum
+
+A continuación se reflejará la retrospectiva del equipo 4 con Scrum. La metodología Estrella de Mar se ha usado nuevamente para evaluar el sprint, señalando áreas de mejora y resaltando las que deben mantenerse.
+
+## Preguntas de la Retrospectiva:
+
+- *¿Qué cosas/actividades/prácticas deberíamos hacer más?*
+  - El equipo sugiere organizar el trabajo aún con mayor antelación para reducir todavía más el margen de errores y hacer más revisiones previas de código. También, afinar detalles de código de sprints anteriores.
+
+- *¿Qué cosas/actividades/prácticas deberíamos hacer menos?*
+  - Se plantea que lo mejor es reducir tiempos muertos durante las weeklys.
+
+- *¿Qué cosas/actividades/prácticas deberíamos comenzar a hacer?*
+  - El equipo ve oportunidades para generar más sesiones de revisión para mejorar procesos.
+
+- *¿Qué cosas/actividades/prácticas deberíamos dejar de hacer?*
+  - El equipo considera que se debe enfocar en ser más organizados a la hora de trabajar cada sprint.
+
+- *¿Qué cosas/actividades/prácticas recomendarían seguir haciendo?*
+  - El grupo propone continuar con la postura de mantenerse como un equipo que funciona cohesionado brindando apoyo.
+
+## Conclusión:
+
+Las respuestas ofrecen ideas valiosas para optimizar el desarrollo y fortalecer la colaboración mutua. Se implementarán acciones para abordar áreas de mejora, asegurando el éxito en sprints futuros.
