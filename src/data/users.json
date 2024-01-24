@@ -16,5 +16,14 @@
      "password": "JG20.07.95",
      "category": "cliente",
      "image": "user_profile_2.png"
-    }
+    },
+    {
+        "id": 2,
+        "firstName": "Juan",
+        "lastName": "González",
+        "email": "prueba@gmail.com",
+        "password": "1234",
+        "category": "cliente",
+        "image": "user_profile_2.png"
+       }
 ]

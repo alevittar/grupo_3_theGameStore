@@ -7,19 +7,19 @@ main {
   padding-bottom: 15px;
 }
 
-form.loginForm {
+form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 300px;
-  height: 180px;
+  height: auto; /* Cambiado a 'auto' para que se ajuste según el contenido */
   background-color: lightgrey;
   padding: 10px;
   margin: auto;
   margin-top: 15px;
 }
 
-#correo {
+#email {
   width: 95%;
   height: 30px;
   margin-top: 10px;
@@ -27,7 +27,7 @@ form.loginForm {
   padding-inline-start: 5%;
 }
 
-#clave {
+#password {
   width: 95%;
   height: 30px;
   margin-bottom: 10px;
@@ -40,15 +40,8 @@ button {
   margin: auto;
 }
 
-#signUp {
+#signUp, #resetPass {
   text-align: center;
   color: black;
   margin-top: 15px;
 }
-
-#resetPass {
-  text-align: center;
-  color: black;
-  margin-top: 15px;
-}
-
