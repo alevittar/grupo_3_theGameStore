@@ -6,11 +6,7 @@ const session = require('express-session');
 const mainRouter = require('./routes/mainRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
 const productsRouter = require('./routes/productsRoutes.js');
-const authRoutes = require('./routes/authRoutes.js');
-const methodOverride = require('method-override');
-const cookieParser = require("cookie-parser");
-
-const app = express();
+const methodOverride =  require('method-override');
 
 let pathPublic = path.resolve("public");
 app.use(express.static(pathPublic));
@@ -41,9 +37,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/', mainRouter);
 app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
-app.use('/auth', authRoutes);
 
-const PORT = 3000;
-app.listen(PORT, () => {  
-    console.log("Servidor levantado en el puerto " + PORT);
+app.get("/", (req, res)=>{
+    let productFormHtml = path.resolve(__dirname, "./views/productForm.html");
+    res.sendFile(productFormHtml);
 });
