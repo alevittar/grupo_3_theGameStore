@@ -1,0 +1,73 @@
+/* Agrega este código en tu archivo CSS o enlázalo en userProfile.ejs */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .user-profile {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Cambio clave para apilar elementos verticalmente */
+    align-items: center; /* Centrar elementos en el contenedor */
+  }
+  
+  .user-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Centrar texto */
+  }
+  
+  .user-info li {
+    margin-bottom: 15px;
+  }
+  
+  .user-info strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .user-info img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .user-info a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .user-info a:hover {
+    text-decoration: underline;
+  }
+  user-profile {
+    background-color: #f0f0f0; /* Color de fondo gris claro */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde alrededor del perfil */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  .logout-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff0000; /* Color de fondo rojo (puedes cambiarlo) */
+    color: #fff; /* Color del texto blanco */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* Espaciado superior */
+  }
+  
+  .logout-button:hover {
+    background-color: #cc0000; /* Cambia el color de fondo al pasar el ratón */
+  }   
