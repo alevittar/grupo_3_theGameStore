@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 
-const PORT = 3000;
+const PORT = 3010;
 app.listen(PORT, () =>{  
     console.log("Servidor levantado")
 });
