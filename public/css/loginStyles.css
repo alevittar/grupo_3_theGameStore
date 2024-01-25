@@ -7,7 +7,7 @@ main {
   padding-bottom: 15px;
 }
 
-form {
+#login   {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -34,7 +34,7 @@ form {
   padding-inline-start: 5%;
 }
 
-button {
+#inicio {
   width: 50%;
   height: 30px;
   margin: auto;
@@ -44,4 +44,10 @@ button {
   text-align: center;
   color: black;
   margin-top: 15px;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
 }

@@ -1,75 +1,66 @@
-
-//usersControllers
-
-const { Console } = require("console");
-const fs = require("fs");
-const path = require("path");
-const multer = require('multer');
+const fs = require('fs').promises;
+const path = require('path');
 const bcrypt = require("bcryptjs");
 
+const usersFilePath = path.resolve(__dirname, '../data/users.json');
 
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-
-
-//configuracion multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/img/profiles'); // Directorio donde se guardarán las imágenes
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname); // Nombre del archivo
-  },
-});
-
-const upload = multer({ storage: storage });
-
-
+const cargarUsuariosAsync = async () => {
+  try {
+    const usuariosData = await fs.readFile(usersFilePath, 'utf-8');
+    return JSON.parse(usuariosData);
+  } catch (error) {
+    throw error;
+  }
+};
 
 const controller = {
-  
-  // Create - Form to create
-  create: (req, res) => {
-    res.render("userForm");
+  mostrarPerfil: async (req, res) => {
+    try {
+      const usuarios = await cargarUsuariosAsync();
+      const usuarioAutenticado = req.session.usuario;
+
+      if (usuarioAutenticado) {
+        const usuarioEncontrado = usuarios.find(user => user.email === usuarioAutenticado.email);
+
+        if (usuarioEncontrado) {
+          res.render('userProfile', { user: usuarioEncontrado });
+        } else {
+          res.redirect('/login');
+        }
+      } else {
+        res.redirect('/login');
+      }
+    } catch (error) {
+      console.error('Error al cargar usuarios:', error);
+      res.redirect('/error');
+    }
   },
 
- store: (req, res) => {
-  try {
-    upload.single('image')(req, res, (err) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).send('Error en la subida del archivo');
-      }
+  create: (req, res) => {
+    res.render('userForm');
+  },
 
+  store: async (req, res) => {
+    try {
+      const usuarios = await cargarUsuariosAsync();
       const newUser = {
-        id: users[users.length - 1].id + 1,
+        id: usuarios.length + 1,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 12),
-        category: req.body.category,
-        image: req.file ? req.file.filename : null,
       };
 
-      users.push(newUser);
+      usuarios.push(newUser);
 
-      fs.writeFileSync(usersFilePath, JSON.stringify(users));
-      res.redirect("/");
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error interno del servidor');
+      await fs.writeFile(usersFilePath, JSON.stringify(usuarios, null, 2));
+
+      res.redirect("/users/perfil");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
   }
-},
-recuerdame: (req, res) => { 
-  if(req.body.recuerdame != undefined){
-    res.cookie("recuerdame", usuarioAutenticado.email,{maxAge: 600000 })
-  }
-}
-}
-
-
+};
 
 module.exports = controller;
-
-

@@ -1,0 +1,31 @@
+<!-- views/userProfile.ejs -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/styles1.css" type="text/css" />
+
+  <!-- Agrega cualquier otro estilo necesario -->
+  <title>User Profile</title>
+</head>
+<body>
+  <%- include('./partials/header') %>
+
+  <main class="user-profile">
+    <h2>User Profile</h2>
+    <ul>
+      <li><strong>Image:</strong> <img src="<%= user.image %>" alt="Profile Image"></li>
+      <li><strong>First Name:</strong> <%= user.firstName %></li>
+      <li><strong>Last Name:</strong> <%= user.lastName %></li>
+      <li><strong>Email:</strong> <%= user.email %></li>
+      <!-- Puedes agregar más campos según sea necesario -->
+    </ul>
+    <a href="/auth/logout" class="logout-button">Logout</a>
+  </main>
+  <!-- Footer -->
+  <%- include('./partials/footer') %>
+</body>
+</html>

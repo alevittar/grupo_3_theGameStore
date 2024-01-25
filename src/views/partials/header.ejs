@@ -30,8 +30,7 @@
     <div id="user-container">
       <% if (typeof usuario !== 'undefined') { %>
         <% console.log('Usuario en la vista:', usuario) %>
-        <!-- Código que solo se mostrará si hay un usuario logueado -->
-        <p><%= usuario.nombre %> <%= usuario.apellido %></p>
+       <a href="/users/perfil"> <p><%= usuario.nombre %> <%= usuario.apellido %></p></a> 
       <% } %>
     </div>
     <nav>

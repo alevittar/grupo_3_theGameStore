@@ -1,10 +1,9 @@
-// controllers/authController.js
+const bcrypt = require('bcrypt');
 const fs = require('fs').promises;
 const path = require('path');
 
 const usersFilePath = path.resolve(__dirname, '../data/users.json');
 
-// Función para cargar usuarios de manera asíncrona
 exports.cargarUsuariosAsync = async () => {
   try {
     const usuariosData = await fs.readFile(usersFilePath, 'utf-8');
@@ -25,10 +24,10 @@ exports.login = async (req, res) => {
     const usuarios = await exports.cargarUsuariosAsync();
 
     const usuarioAutenticado = usuarios.find(
-      (usuario) => usuario.email === email && usuario.password === password
+      (usuario) => usuario.email === email
     );
 
-    if (usuarioAutenticado) {
+    if (usuarioAutenticado && bcrypt.compareSync(password, usuarioAutenticado.password)) {
       req.session.usuario = {
         email: email,
         nombre: usuarioAutenticado.firstName,
