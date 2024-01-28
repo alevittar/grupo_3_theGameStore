@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const usersRoutes = require('./routes/usersRoutes'); // Agrega esta línea
-
+const bodyParser = require('body-parser');
 const app = express();
 
 let pathPublic = path.resolve("public");
@@ -17,7 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(cookieParser());
-
+// Configura body-parser
+app.use(bodyParser.json());
 app.use(session({
   secret: 'tu_secreto_aqui',
   resave: false,
