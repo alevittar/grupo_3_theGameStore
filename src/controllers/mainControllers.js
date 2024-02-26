@@ -1,36 +1,32 @@
-const path = require("path");
-const fs = require("fs");
+const mainService = require('../services/mainService');
 
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const mainController = {
+  home: async (req, res) => {
+    try {
+      const masVendidos = await mainService.getBestSellingProducts();
+      const destacados = await mainService.getFeaturedProducts();
 
-const controller = {
-  home: (req, res) => {
-    const masVendidos = products.slice(0, 5);
-    const destacados = products.slice(-5);
+      // Obtener información del usuario si está autenticado
+      const usuario = req.session.usuario;
 
-    // Obtener información del usuario si está autenticado
-    const usuario = req.session.usuario;
-
-    res.render("index", { masVendidos, destacados, usuario });
-  },
-
-  showCartPage: (req, res) => {
-    res.render("carrito", { pageTitle: "Carrito de Compras" });
+      res.render("index", { masVendidos, destacados, usuario });
+    } catch (error) {
+      console.error('Error en la página principal:', error);
+      res.status(500).send('Error interno del servidor');
+    }
   },
 
   showLoginPage: (req, res) => {
-    res.render("login", { pageTitle: "Iniciar Sesión" });
+    // Implementa la lógica para renderizar la página de inicio de sesión
+    res.render('login', { pageTitle: 'Iniciar Sesión' });
   },
 
   showRegisterPage: (req, res) => {
-    res.render("register", { pageTitle: "Registro de Usuario" });
+    // Implementa la lógica para renderizar la página de registro de usuario
+    res.render('register', { pageTitle: 'Registro de Usuario' });
   },
 
-  renderHomePage: (req, res) => {
-    const usuario = req.session.usuario;
-    res.render('index', { usuario });  // Asegúrate de incluir 'usuario' en los datos
-  },
+  // Otros métodos del controlador según tus necesidades
 };
 
-module.exports = controller;
+module.exports = mainController;

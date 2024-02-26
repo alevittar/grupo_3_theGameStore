@@ -1,10 +1,9 @@
-//  Rutas para las vistas generales 
 const express = require('express');
 const router = express.Router();
-const controllers = require('../controllers/mainControllers');
+const mainController = require('../controllers/mainControllers');
 
-router.get('/', controllers.home);
-router.get('/login', controllers.showLoginPage);
-router.get('/register', controllers.showRegisterPage);
+router.get('/', mainController.home);
+router.get('/login', mainController.showLoginPage);
+router.get('/register', mainController.showRegisterPage);
 
 module.exports = router;

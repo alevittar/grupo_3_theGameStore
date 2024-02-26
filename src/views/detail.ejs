@@ -65,11 +65,12 @@
       
       </div>
       
-        <button class="add-to-car">
-          Añadir al carrito
-          <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-          
-        </button>
+      <form action="/cart/addToCart" method="POST">
+        <input type="hidden" name="productId" value="<%= product.id %>">
+        <button type="submit" class="add-to-cart-button">Añadir al carrito</button>
+    </form>
+    
+      
       </div>  
       <br>
       <br>

@@ -1,138 +1,135 @@
-//productsControllers
+const productoService = require('../services/productsService');
+const { Producto } = require('../database/models');
 
-const { Console } = require("console");
-const fs = require("fs");
-const path = require("path");
-const multer = require('multer');
-
-
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-function getProductById(productId) {
-  return products.find((product) => product.id === productId);
-}
-const updateProduct = (productId, newData) => {
-  const productIndex = products.findIndex((product) => product.id == productId);
-  if (productIndex !== -1) {
-    products[productIndex] = { ...products[productIndex], ...newData };
-    saveProductsToFile();
-    return true; // Actualización exitosa
-  }
-  return false; // Producto no encontrado
-};
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-//configuracion multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/img'); // Directorio donde se guardarán las imágenes
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname); // Nombre del archivo
-  },
-});
-const upload = multer({ storage: storage });
-
-const controller = {
-  index: (req, res) => {
-    const masVendidos = products.slice(0, 5);
-    const destacados = products.slice(-5);
-
-    res.render("products", { masVendidos, destacados });
-  },
-
-  detail: (req, res) => {
-    const { id } = req.params;
-    const product = getProductById(parseInt(id));
-
-    if (!product) {
-      res.redirect("/"); // O redirige a la página principal o muestra un error, según tus necesidades
-    }
-
-    res.render("detail", { product });
-  },
-  // Create - Form to create
-  create: (req, res) => {
-    res.render("productForm");
-  },
-
-  // Create -  Method to store
-
-  store: (req, res) => {
+const productosController = {
+  index: async (req, res) => {
     try {
-      upload.single('image')(req, res, (err) => {
-        if (err) {
-          console.error(err);
-          return res.status(500).send('Error en la subida del archivo');
-        }
-
-        const newProduct = {
-          id: products[products.length - 1].id + 1,
-          name: req.body.name,
-          price: req.body.price,
-          category: req.body.category,
-          stock: req.body.stock,
-          description: req.body.description,
-          image: req.file ? req.file.filename : null,
-        };
-
-        products.push(newProduct);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
-        res.redirect("/");
-      });
+      const productos = await productoService.getAll();
+      res.render("products", { productos });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error interno del servidor');
     }
   },
 
-  // Update - Form to edit
-  edit: (req, res) => {
-    const { id } = req.params;
-    const product = products.find((product) => product.id == id);
-    if (!product) {
+  create: (req, res) => {
+    res.render("productForm");
+  },
+
+  store: async (req, res) => {
+      try {
+        const { name, price, category_id, stock, description } = req.body;
+    
+        if (!name) {
+          return res.status(400).json({ error: 'El campo name es obligatorio.' });
+        }
+      let newProductData = {
+        name: req.body.name,
+        price: req.body.price,
+        category_id: req.body.category_id,
+        stock: req.body.stock,
+        description: req.body.description,
+        image: req.file ? req.file.filename : null,
+      };
+  
+      console.log('New Product Data:', newProductData);
+  
+      // Usa directamente Sequelize.create
+      const createdProduct = await Producto.create(newProductData);
+  
+      console.log('Created Product:', createdProduct);
+  
       res.redirect("/");
-    }
-    res.render("productFormEdit", { product });
-  },
-
-  update: (req, res) => {
-    const productId = parseInt(req.params.id);
-
-    // Buscar el índice del producto con el ID proporcionado
-    const productIndex = products.findIndex(
-      (product) => product.id === productId
-    );
-
-    if (productIndex !== -1) {
-      // Actualizar la información del producto
-      products[productIndex].name = req.body.name;
-      products[productIndex].price = req.body.price;
-      products[productIndex].discount = req.body.discount;
-      products[productIndex].category = req.body.category;
-      products[productIndex].description = req.body.description;
-
-      // Guardar la actualización en el archivo JSON
-      fs.writeFileSync(productsFilePath, JSON.stringify(products));
-
-      res.redirect('/products/detail/:id');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
     }
   },
 
-  // Delete - Delete one product from DB
-  destroy: (req, res) => {
-    const productId = parseInt(req.params.id);
-    const productIndex = products.findIndex(
-      (product) => product.id === productId
-    );
-    if (productIndex !== -1) {
-      products.splice(productIndex, 1);
+  detail: async (req, res) => {
+    const { id } = req.params;
 
-      fs.writeFileSync(productsFilePath, JSON.stringify(products));
+    try {
+      const product = await productoService.getById(id);
+
+      if (!product) {
+        return res.redirect("/products");
+      }
+
+      res.render("detail", { product });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
+  },
+
+  edit: async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const product = await productoService.getById(id);
+
+      if (!product) {
+        return res.redirect("/products");
+      }
+
+      res.render("productFormEdit", { product });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
+  },
+
+  update: async (req, res) => {
+    const productId = req.params.id;
+
+    try {
+      let existingProduct = await productoService.getById(productId);
+
+      if (!existingProduct) {
+        return res.redirect("/products");
+      }
+
+      // Manejo de la carga de archivos
+      let image = existingProduct.image;
+      if (req.file) {
+        image = req.file.filename;
+      }
+
+      const updatedProductData = {
+        name: req.body.name,
+        price: req.body.price,
+        category_id: req.body.category,
+        stock: req.body.stock,
+        description: req.body.description,
+        image: image,
+      };
+
+      const updated = await productoService.updateById(productId, updatedProductData);
+
+      if (updated) {
+        return res.redirect(`/products/detail/${productId}`);
+      }
+
+      return res.redirect('/products'); // O redirige a otra página según tus necesidades
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
+  },
+
+  destroy: async (req, res) => {
+    const productId = req.params.id;
+
+    try {
+      await productoService.deleteById(productId);
 
       res.redirect("/products");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
     }
   },
 };
 
-module.exports = controller;
+module.exports = productosController;

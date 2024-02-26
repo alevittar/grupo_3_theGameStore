@@ -1,30 +1,22 @@
-//productsRoutes
-
-// ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const productosController = require('../controllers/productsControllers');
 
-// ************ Controller Require ************
-const productsController = require('../controllers/productsControllers');
+// Obtener todos los productos
+router.get('/', productosController.index);
 
+// Crear un nuevo producto
+router.get('/create', productosController.create);
+router.post('/create', productosController.store);
 
-/*** GET ALL PRODUCTS ***/ 
-router.get('/', productsController.index); 
+// Obtener detalles de un producto
+router.get('/detail/:id', productosController.detail);
 
-/*** CREATE PRODUCT ***/ 
-router.get('/create', productsController.create); 
-router.post('/', productsController.store); 
+// Editar un producto
+router.get('/edit/:id', productosController.edit);
+router.put('/:id', productosController.update);
 
-/*** GET PRODUCT ***/ 
-router.get('/detail/:id', productsController.detail); 
-
-
-/*** EDIT PRODUCT ***/ 
-router.get('/edit/:id', productsController.edit); 
-router.put('/:id', productsController.update); 
-
-/*** DELETE ONE PRODUCT***/ 
-router.delete('/:id/delete', productsController.destroy); 
+// Eliminar un producto
+router.delete('/:id/delete', productosController.destroy);
 
 module.exports = router;
-

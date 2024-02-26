@@ -12,45 +12,8 @@
 </head>
 
 <body>
-  <header class="contenedor">
-    <div id="top-header">
-      <div id="logo">
-        <a href="/">
-            <img src="/img/logo.png" alt="Logo de TheGameStore" />
-        </a>
-    </div>
-      <div id="search-bar">
-        <input type="text" placeholder="Buscar..." />
-        <button type="submit">Buscar</button>
-      </div>
-      <div id="icons">
-        <a href="#">
-          <img src="/img/localizacion.png" alt="localizacion" />
-        </a>
-        <a href="#">
-          <img src="/img/usuario.png" alt="user" />
-        </a>
-        <a href="#">
-          <img src="/img/burbuja-de-dialogo.png" alt="chat" />
-        </a>
-        <a href="#">
-          <img src="/img/carrito-de-compras.png" alt="carrito-de-compras" />
-        </a>
-        <a href="#">
-          <img src="/img/entrega.png" alt="envio" />
-        </a>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Calcular envio</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Ayuda</a></li>
-      </ul>
-    </nav>
-  </header>
+  <%- include('./partials/header') %>
+
 
   <!-- Main content -->
   <main>
@@ -61,23 +24,25 @@
 
         <div class="contenedor-producto">
 
-          <div class="foto-producto">
-            <img src="./img/producto1.jpeg" alt="foto del producto">
-          </div>
-
-          <div class="articulo">
-            <div class="nombre-producto">Parlantes Potenciados</div>
-            <div class="descripcion-producto">mejoran el sonido de cualquier juego</div>
-            <h3>Calificación:</h3>
-            <div class="calificacion-producto">x x x x</div>
-            <input type="text" name="cantidad" placeholder="cantidad">
-            <h3>PRECIO: $ 999.999,99</h3>
-          </div>
-          <div class="venta">
-            <div class="cantidad"></div>
-            <div class="precio"></div>
-          </div>
-        </div>
+          <% if (carrito.length > 0) { %>
+            <div class="productos-carrito">
+              <% carrito.forEach(producto => { %>
+                <div class="producto">
+                  <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+                  <div class="detalles">
+                    <h2><%= producto.nombre %></h2>
+                    <p>Precio: $<%= producto.precio %></p>
+                    <p>Cantidad: <%= producto.cantidad %></p>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+            <div class="total">
+              <h2>Total: $<%= calcularTotal(carrito) %></h2>
+            </div>
+          <% } else { %>
+            <p>No hay productos en el carrito.</p>
+          <% } %>
 
         <div class="datos-de-envio">
           <div class="codigo-postal">

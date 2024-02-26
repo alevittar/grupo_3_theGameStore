@@ -6,33 +6,14 @@
 
     <!-- Main content -->
     <main>
-      <!-- Sección de artículos más vendidos -->
-      <section id="mas-vendidos">
-        <h2>Artículos más vendidos</h2>
-        <div class="articulos">
-          <% masVendidos.forEach(product => { %>
+      <!-- Sección de todos los productos -->
+      <section id="todos-los-productos">
+        <h2>Todos los productos</h2>
+        <div class="productos">
+          <% productos.forEach(product => { %>
             <!-- Renderizar cada producto -->
             <a href="/products/detail/<%= product.id %>">
-              <div class="producto">
-                <img src="/img/<%= product.image %>" alt="<%= product.name %>" />
-                <div class="cont-precio">
-                  <h3><%= product.name %></h3>
-                  <p>Precio: $<%= product.price %></p>
-                </div>
-              </div>
-            </a>
-          <% }); %>
-        </div>
-      </section>
-
-      <!-- Sección de productos destacados -->
-      <section id="destacados">
-        <h2>Productos destacados</h2>
-        <div class="productos-destacados">
-          <% destacados.forEach(product => { %>
-            <!-- Renderizar cada producto -->
-            <a href="/products/detail/<%= product.id %>">
-              <div class="producto-destacado">
+              <div class="producto" id="producto-<%= product.id %>">
                 <img src="/img/<%= product.image %>" alt="<%= product.name %>" />
                 <div class="cont-precio">
                   <h3><%= product.name %></h3>
