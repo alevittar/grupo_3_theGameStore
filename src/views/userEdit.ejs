@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/register.css" type="text/css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <title>TheGameStore</title>
+</head>
+<body>
+  <%- include('./partials/header') %>
+
+
+  <main class="contenedorform">
+    <form action="/usuarios/<%= usuario.id %>/?_method=PUT" method="POST">
+      <div class="form">
+        <h2 class="título">Edición de mi perfil</h2>
+        <p>
+          <label for="firstName" class="form-label">firstName: <%= usuario.firstName %></label>
+          <input type="text" id="firstName" name="firstName" value="<%= usuario.firstName %>" >
+        </p>
+        <p>
+          <label class="info" for="lastName"> Apellido: <%=usuario.lastName %></label>
+          <input type="text" name="lastName" value="<%=usuario.lastName %>"  >
+        </p>
+        <p>
+          <label class="info" for="email"> Email: <%=usuario.email %></label>
+          <input type="email" name="email" id="email" value="<%=usuario.email %>">
+        </p>
+  
+        <p>
+          <label class="info" for="password"> Contraseña:<%=usuario.password %></label>
+          <input type="password" name="password" id="password" value="<%=<usuario.password</usuario> %>">
+        </p>
+        <a href="usuarios/editar/<% usuario.id%"> 
+        <button type="submit" class="buy-now-button">Guardar producto</button>
+        </a>
+      </div>
+    </form>
+  
+          
+  </main>
+  
+
+  </main>
+
+  <!-- Footer -->
+  <%- include('./partials/footer') %>
+
+</body>
+
+</html>

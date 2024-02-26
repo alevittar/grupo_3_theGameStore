@@ -50,49 +50,96 @@ const controller = {
       res.redirect('/error');
     }
   },
+  //controlador para mostrar detalles de perfil
+
+  Detalle: function (req, res) {
+    db.usuarios.findByPk(req.params.id)
+      .then(function (usuario) {
+        res.render("userProfile", { usuario: usuario });
+      })
+  },
+//controlador para mostrar formulario de registro
 
   create: (req, res) => {
-    res.render('userForm');
+        res.render("UserForm");
   },
 
-  store: async (req, res) => {
-    try {
-      upload(req, res, async function (err) {
-        if (err instanceof multer.MulterError) {
-          return res.status(500).json(err);
-        } else if (err) {
-          return res.status(500).json(err);
-        }
+  usuarioCreado:(req, res) =>{
+    db.Usuario.Create({
+        id: usuarios.length + 1,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 12),
+        category: req.body.category,
+        image: fileName, 
+    }
 
-        const usuarios = await cargarUsuariosAsync();
+    );
+  },
 
-        if (!req.body.password) {
-          return res.status(400).send('La contraseña es requerida');
-        }
+//controlador para editar perfil
 
-        const fileName = req.file ? req.file.filename : null;
+  editar:function(req,res){
+    db.usuario.findByPk(req.params.id)
+    .then(usuarioHayado(
+      res.render("userEdit", {usuario: usuarioHayado}))
+    );
+  },
 
-        const newUser = {
-          id: usuarios.length + 1,
-          firstName: req.body.firstName,
-          lastName: req.body.lastName,
-          email: req.body.email,
-          password: bcrypt.hashSync(req.body.password, 12),
-          category: req.body.category,
-          image: fileName, // Almacenar el nombre del archivo en el JSON
-        };
-
-        usuarios.push(newUser);
-
-        await fs.writeFile(usersFilePath, JSON.stringify(usuarios, null, 2));
-
-        res.redirect('/');
-      });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error interno del servidor');
+  // controlador para subir edición
+  Update: function(req, res) {
+    const usuarioEditado= {
+      firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 12),
+        category: req.body.category,
+        image: fileName, 
+    }
+    db.usuarios.update(
+    { usuarioEditado},{
+    where:{id: req.params.id}
+  })
+      res.redirect("/usuarios/"+ req.params.id )
     }
   },
-};
 
-module.exports = controller;
+  store: async(req, res) => {
+            try {
+              upload(req, res, async function (err) {
+                if (err instanceof multer.MulterError) {
+                  return res.status(500).json(err);
+                } else if (err) {
+                  return res.status(500).json(err);
+                }
+
+                const usuarios = await cargarUsuariosAsync();
+
+                if (!req.body.password) {
+                  return res.status(400).send('La contraseña es requerida');
+                }
+
+                const fileName = req.file ? req.file.filename : null;
+
+                const newUser = {
+                  id: usuarios.length + 1,
+                  firstName: req.body.firstName,
+                  lastName: req.body.lastName,
+                  email: req.body.email,
+                  password: bcrypt.hashSync(req.body.password, 12),
+                  category: req.body.category,
+                  image: fileName, // Almacenar el nombre del archivo en el JSON
+                };
+
+              usuarios.push(newUser);
+                await fs.writeFile(usersFilePath, JSON.stringify(usuarios, null, 2));
+                res.redirect('/');
+              });
+            } catch (error) {
+              console.error(error);
+              res.status(500).send('Error interno del servidor');
+            }
+          };
+
+  module.exports = controller;
