@@ -3,7 +3,6 @@ const { Producto } = require('../database/models');
 const mainService = {
   getFeaturedProducts: async () => {
     try {
-      // Puedes personalizar la lógica para obtener productos destacados
       const featuredProducts = await Producto.findAll({
         where: {
           category_id: 1
@@ -19,10 +18,9 @@ const mainService = {
 
   getBestSellingProducts: async () => {
     try {
-      // Puedes personalizar la lógica para obtener productos más vendidos
       const bestSellingProducts = await Producto.findAll({
         where: {
-          category_id: 2 // Filtra por productos con category_id igual a 2
+          category_id: 2
         },
         limit: 5
       });
@@ -32,8 +30,6 @@ const mainService = {
       throw error;
     }
   },
-
-  // Otros métodos según tus necesidades
 };
 
 module.exports = mainService;

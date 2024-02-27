@@ -12,12 +12,12 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], {
     ...config,
-    logging: false, // Desactiva la salida de consultas SQL en la consola
+    logging: false, 
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, {
     ...config,
-    logging: false, // Desactiva la salida de consultas SQL en la consola
+    logging: false, 
   });
 }
 
@@ -31,7 +31,6 @@ fs
     db[model.name] = model;
   });
 
-// Asociaciones
 Object.values(db).forEach(model => {
   if (model.associate) {
     model.associate(db);

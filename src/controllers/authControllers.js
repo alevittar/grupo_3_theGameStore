@@ -1,49 +1,39 @@
 const bcrypt = require('bcrypt');
-const fs = require('fs').promises;
-const path = require('path');
+const { Usuario } = require('../database/models'); 
 
-const usersFilePath = path.resolve(__dirname, '../data/users.json');
+const authController = {
+  showLoginForm: (req, res) => {
+    res.render('login');
+  },
 
-exports.cargarUsuariosAsync = async () => {
-  try {
-    const usuariosData = await fs.readFile(usersFilePath, 'utf-8');
-    return JSON.parse(usuariosData);
-  } catch (error) {
-    throw error;
-  }
-};
+  login: async (req, res) => {
+    const { email, password } = req.body;
 
-exports.showLoginForm = (req, res) => {
-  res.render('login');
-};
+    try {
+      const usuarioAutenticado = await Usuario.findOne({
+        where: { email: email }
+      });
 
-exports.login = async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const usuarios = await exports.cargarUsuariosAsync();
-
-    const usuarioAutenticado = usuarios.find(
-      (usuario) => usuario.email === email
-    );
-
-    if (usuarioAutenticado && bcrypt.compareSync(password, usuarioAutenticado.password)) {
-      req.session.usuario = {
-        email: email,
-        nombre: usuarioAutenticado.firstName,
-        apellido: usuarioAutenticado.lastName,
-      };
-      res.redirect('/');
-    } else {
-      res.render('login', { error: true });
+      if (usuarioAutenticado && bcrypt.compareSync(password, usuarioAutenticado.password)) {
+        req.session.usuario = {
+          email: email,
+          nombre: usuarioAutenticado.first_name,
+          apellido: usuarioAutenticado.last_name,
+        };
+        res.redirect('/');
+      } else {
+        res.render('login', { error: true });
+      }
+    } catch (error) {
+      console.error('Error al autenticar usuario:', error);
+      res.redirect('/error');
     }
-  } catch (error) {
-    console.error('Error al cargar usuarios:', error);
-    res.redirect('/error');
-  }
+  },
+
+  logout: (req, res) => {
+    req.session.destroy();
+    res.redirect('/login');
+  },
 };
 
-exports.logout = (req, res) => {
-  req.session.destroy();
-  res.redirect('/login');
-};
+module.exports = authController;

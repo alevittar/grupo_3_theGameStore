@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  //asociaciones 
   Usuario.associate = (models) => {
     Usuario.belongsTo(models.Rol, {
       foreignKey: 'rol_id',

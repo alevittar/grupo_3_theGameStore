@@ -1,4 +1,3 @@
-// roles.js
 module.exports = (sequelize, DataTypes) => {
   const Rol = sequelize.define('Rol', {
     id: {
@@ -16,7 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
 
-  // Definir asociaciones con otros modelos si es necesario
   Rol.associate = (models) => {
     Rol.hasMany(models.Usuario, {
       foreignKey: 'rol_id',

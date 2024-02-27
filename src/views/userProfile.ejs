@@ -1,4 +1,4 @@
-<!-- views/userProfile.ejs -->
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -8,28 +8,34 @@
   <link rel="stylesheet" href="/css/styles.css" type="text/css" />
   <link rel="stylesheet" href="/css/perfil.css" type="text/css" />
 
-  <!-- Agrega cualquier otro estilo necesario -->
+
   <title>User Profile</title>
 </head>
 <body>
   <%- include('./partials/header') %>
 
-  <main class="user-profile">
-    <h2>User Profile</h2>
-    <ul>
-      <li><strong>Image:</strong> <img src="/img/profiles/<%= user.image %>" alt="Profile Image"></li>
-      <li><strong>First Name:</strong> <%= user.firstName %></li>
-      <li><strong>Last Name:</strong> <%= user.lastName %></li>
-      <li><strong>Email:</strong> <%= user.email %></li>
-      <li><strong>Categoría:</strong> <%= user.category %></li>
-      <!-- Puedes agregar más campos según sea necesario -->
-    </ul>
+  <main class="user-profile" id="userProfile">
+    <h2>Perfil de <%= user.first_name %></h2>
+    <div class="user-info">
+        <div class="user-info-item">
+            <strong>Image:</strong> <img src="/img/<%= user.image %>" alt="Profile Image" class="profile-image">
+        </div>
+        <div class="user-info-item">
+            <strong>First Name:</strong> <%= user.first_name %>
+        </div>
+        <div class="user-info-item">
+            <strong>Last Name:</strong> <%= user.last_name %>
+        </div>
+        <div class="user-info-item">
+            <strong>Email:</strong> <%= user.email %>
+        </div>
+    </div>
     <a href="/auth/logout" class="logout-button">Logout</a>
-    <a href="usuarios/editar/<%usuario.id%>">
-    <button> Editar</button>
+    <a href="/usuarios/editar/<%= user.id %>" class="edit-profile-button">
+        <button>Edit</button>
     </a>
-  </main>
-  <!-- Footer -->
+</main>
+
   <%- include('./partials/footer') %>
 </body>
 </html>

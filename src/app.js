@@ -1,5 +1,3 @@
-// app.js
-
 const express = require("express");
 const path = require("path");
 const session = require('express-session');
@@ -40,19 +38,18 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Configuración de multer
+const profilesDir = path.resolve(__dirname, '../public/img'); // 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/img');
-  },
+  destination: profilesDir,
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now());
-  }
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, 'profile-' + uniqueSuffix + path.extname(file.originalname));
+  },
 });
 
 const upload = multer({ storage: storage });
 
-app.use(upload.single('image')); // Middleware de multer
+app.use(upload.single('image'));
 
 // Rutas
 app.use('/auth', authRoutes);

@@ -33,8 +33,7 @@ const productosController = {
       };
   
       console.log('New Product Data:', newProductData);
-  
-      // Usa directamente Sequelize.create
+
       const createdProduct = await Producto.create(newProductData);
   
       console.log('Created Product:', createdProduct);
