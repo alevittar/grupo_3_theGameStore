@@ -9,36 +9,47 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <script src="/js/registroValidation.js"></script>
     <title>TheGameStore</title>
   </head>
     <body>
       <%- include('./partials/header') %>
     <div class="container">
       <h1>Formulario Para Registro de Usuarios</h1>
-      <form action="/users/create" method="POST" enctype="multipart/form-data">
-          <label for="firstName" class="form-label">Nombre:</label>
-          <input type="text" id="firstName" name="firstName" placeholder="Ej: Juan" class="form-input">
-
-          <label for="lastName" class="form-label">Apellido:</label>
-          <input type="text" id="lastName" name="lastName" placeholder="Perez" class="form-input">
-
-          <label for="email" class="form-label">Email:</label>
-          <input type="email" id="email" name="email" placeholder="usuario@correo.com" class="form-input">
-
-          <label for="password" class="form-label">Password:</label>
-          <input type="password" id="password" name="password" placeholder="ingrese un password de usuario" class="form-input">
-
-          <label for="category" class="form-label">Categoría:</label>
-          <select name="category" id="category" class="form-input">
+      <form action="/users/create" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <label for="firstName" class="form-label">Nombre:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Ej: Juan" class="form-input">
+        <small id="firstNameError" class="error-message"></small>
+    
+        <label for="lastName" class="form-label">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Perez" class="form-input">
+        <small id="lastNameError" class="error-message"></small>
+    
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" placeholder="usuario@correo.com" class="form-input">
+        <small id="emailError" class="error-message"></small>
+    
+        <label for="password" class="form-label">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Ingrese una contraseña" class="form-input">
+        <small id="passwordError" class="error-message"></small>
+    
+        <label for="confirmPassword" class="form-label">Repetir Contraseña:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repita la contraseña" class="form-input">
+        <small id="confirmPasswordError" class="error-message"></small>
+    
+        <label for="category" class="form-label">Categoría:</label>
+        <select name="category" id="category" class="form-input">
             <option value="1">Cliente</option>
             <option value="2">Administrador</option>
-          </select>
-
-          <label for="image" class="form-label">Imagen de Perfil:</label>
-          <input type="file" id="image" name="image" class="form-input">
-
-          <button type="submit" class="buy-now-button">Registrar Usuario</button>
-      </form>
+        </select>
+    
+        <label for="image" class="form-label">Imagen de Perfil:</label>
+        <input type="file" id="image" name="image" class="form-input">
+        <small id="imageError" class="error-message"></small>
+    
+        <button type="submit" class="buy-now-button">Registrar Usuario</button>
+    </form>
+    
     </div>
     <!-- Incluye el pie de página -->
     <%- include('./partials/footer') %>

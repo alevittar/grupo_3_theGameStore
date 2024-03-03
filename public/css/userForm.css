@@ -55,4 +55,6 @@
   .buy-now-button:hover {
     background-color: #45a049;
   }
-  
+  form small {
+    color: rgb(209, 91, 12);
+}
