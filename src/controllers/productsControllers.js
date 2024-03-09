@@ -1,5 +1,6 @@
 const productoService = require('../services/productsService');
 const { Producto } = require('../database/models');
+const {validationResult} = require('express-validator');
 
 const productosController = {
   index: async (req, res) => {
@@ -17,6 +18,11 @@ const productosController = {
   },
 
   store: async (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
+
+    
+    
       try {
         const { name, price, category_id, stock, description } = req.body;
     
@@ -42,6 +48,9 @@ const productosController = {
     } catch (error) {
       console.error(error);
       res.status(500).send('Error interno del servidor');
+    }}else{
+      res.render("productForm", {errors:errors.array(), old: req.body});
+
     }
   },
 
