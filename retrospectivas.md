@@ -131,3 +131,33 @@ A continuación se reflejará la retrospectiva del equipo 4 con Scrum. La metodo
 ## Conclusión:
 
 Las respuestas ofrecen ideas valiosas para optimizar el desarrollo y fortalecer la colaboración mutua. Se implementarán acciones para abordar áreas de mejora, asegurando el éxito en sprints futuros.
+
+# FEEDBACK : METODOLOGÍA ESTRELLA 
+
+## Qué cosas / actividades / prácticas deberíamos hacer más?
+
+1. Coordinar un horario fijo de reunión y que sea prioridad.
+2. Empezar a retocar detalles para mejorar del proyecto con lo aprendido hasta el momento.
+
+## Qué cosas / actividades / prácticas deberíamos hacer menos?
+
+1. No hacer menos de lo que venimos haciendo.
+2. Ninguna.
+
+## Qué cosas / actividades / prácticas deberíamos comenzar a hacer?
+
+1. Tratar de implementar una modalidad de pair programming, eso podría ayudar mucho cuando nos trabamos en algún punto específico del desarrollo.
+2. Empezar a depurar el código y la estética del proyecto para la versión final.
+    - Avisar que tenemos problemas con tiempo no a último momento.
+    - Repartir las tareas de manera que todos realicemos código.
+
+## Qué cosas / actividades / prácticas deberíamos dejar de hacer?
+
+1. No dejar de hacer nada de lo que venimos haciendo.
+2. Ninguna.
+
+## Qué cosas / actividades / prácticas recomendarían seguir haciendo?
+
+1. Seguir manteniendo la comunicación y la división de tareas.
+2. Comunicación activa.
+
