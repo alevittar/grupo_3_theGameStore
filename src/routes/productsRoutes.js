@@ -9,15 +9,11 @@ router.get('/', productosController.index);
 //validaciones
 
 const validateRegister = [ 
-    check('name').notEmpty().withMessage('Este Campo es Obligatorio')
+    check('name').notEmpty().withMessage('El Campo de Nombre es Obligatorio')
                  .isLength({ min: 5 }).withMessage('El nombre debe tener al menos 5 caracteres'),
     check('description').isLength({ min: 20 }).withMessage('La descripcion debe tener al menos 20 caracteres'),
-    /*check('image')..custom((value, { req }) => {
-        if (value && !value.match(/\.(jpg|jpeg|png|gif)$/)) {
-            throw new Error('La imagen debe ser un archivo JPG, JPEG, PNG o GIF');
-        }
-        return true;
-    })*/]
+    //check('image').matches((/\.(jpg|jpeg|png|gif)$/)).withMessage('La imagen debe ser un archivo JPG, JPEG, PNG o GIF')
+     ];
 
 
 router.get('/create',  productosController.create);

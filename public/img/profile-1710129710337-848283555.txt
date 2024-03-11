@@ -1,0 +1,31 @@
+-1- Cumple, tiene todos los elementos detallados para la header, main y footer
+-2- Cumple, tiene los elementos centrados y los iconos con las especificaciones de estilo solicitadas
+-3- Adapta los elementos del header, el listado de los artículos (1 en mobile, 2 en tablet y 4 en desktop), y el contenido del footer a las 3 resoluciones.
+
+
+-----------------------------------------------
+Como observación sería:
+- En mobile sólo debería mostra el burger menú. Actualmente se muestran dos menú.
+- En el footer falta el background blanco
+- En desktop se podría centrar la barra de busqueda del header
+--------------------------------------------------
+
+
+
+-4- Cumple, presenta un formulario de registro con los campos indicados.
+-5- Cumple, presenta formulario de login con los campos indicados.
+
+-----------------------------------------------------
+-6- No cumple, no se muestra un mensaje de error en los campos del formulario cuando el usuario ingresa un dato equivocado.
+
+-----------------------------------------------------
+
+
+-7-Cumple, el search bar es un formulario.
+-8- Cumple, se observan propiedades de transición.
+-9- El formulario de registro es destacable, con una adecuada distribución de tamaños en cada campo haciendo un uso óptimo del espacio.
+
+
+--------------------------------------------------------
+-10- Se podría mejorar en versión desktop la disposición del search bar para que el botón de búsqueda del formulario se coloque a la derecha de la barra de búsqueda(input) y no por debajo.
+--------------------------------------------------------
