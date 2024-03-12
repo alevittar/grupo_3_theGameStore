@@ -1,4 +1,3 @@
-// validation.js
 
 function validateForm() {
     let password = document.getElementById("password").value;

@@ -1,3 +1,4 @@
+const { body, validationResult } = require('express-validator');
 const productoService = require('../services/productsService');
 const { Producto } = require('../database/models');
 
@@ -16,34 +17,43 @@ const productosController = {
     res.render("productForm");
   },
 
-  store: async (req, res) => {
+  store: [
+    body('name').notEmpty().withMessage('El campo name es obligatorio.'),
+    body('description').notEmpty().withMessage('El campo description es obligatorio.'),
+    body('price').isNumeric().withMessage('El campo price debe ser un número.'),
+    body('stock').isInt().withMessage('El campo stock debe ser un número entero.'),
+    body('category_id').isInt().withMessage('El campo category_id debe ser un número entero.'),
+
+    async (req, res) => {
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+
       try {
         const { name, price, category_id, stock, description } = req.body;
-    
-        if (!name) {
-          return res.status(400).json({ error: 'El campo name es obligatorio.' });
-        }
-      let newProductData = {
-        name: req.body.name,
-        price: req.body.price,
-        category_id: req.body.category_id,
-        stock: req.body.stock,
-        description: req.body.description,
-        image: req.file ? req.file.filename : null,
-      };
-  
-      console.log('New Product Data:', newProductData);
 
-      const createdProduct = await Producto.create(newProductData);
-  
-      console.log('Created Product:', createdProduct);
-  
-      res.redirect("/");
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Error interno del servidor');
-    }
-  },
+        let newProductData = {
+          name,
+          price,
+          category_id,
+          stock,
+          description,
+          image: req.file ? req.file.filename : null,
+        };
+
+        const createdProduct = await Producto.create(newProductData);
+
+        console.log('Created Product:', createdProduct);
+
+        res.redirect('/');
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Error interno del servidor');
+      }
+    },
+  ],
 
   detail: async (req, res) => {
     const { id } = req.params;

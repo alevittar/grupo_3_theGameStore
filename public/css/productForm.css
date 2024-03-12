@@ -55,4 +55,9 @@
   .buy-now-button:hover {
     background-color: #45a049;
   }
-  
+  .validation-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+  }

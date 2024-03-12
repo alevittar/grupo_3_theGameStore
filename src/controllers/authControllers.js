@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-const { Usuario } = require('../database/models'); 
+const { validationResult } = require('express-validator');
+const { Usuario } = require('../database/models');
 
 const authController = {
   showLoginForm: (req, res) => {
@@ -7,6 +8,12 @@ const authController = {
   },
 
   login: async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.render('login', { errors: errors.array(), error: true });
+    }
+
     const { email, password } = req.body;
 
     try {
