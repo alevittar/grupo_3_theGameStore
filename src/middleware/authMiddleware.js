@@ -15,6 +15,10 @@
   };
 
   const adminLogin = (req, res, next) => {
+    if (!req.session.user || !req.session.user.isAdmin) {
+      res.redirect('/'); // Redirige al usuario si no es un administrador
+      return;
+    }
     next();
   };
 

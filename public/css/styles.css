@@ -120,14 +120,14 @@ li a:hover {
 .producto-destacado {
   flex: 0 0 calc(20% - 20px);
   gap: 5px;
+  height: 300px; /* Establece una altura fija para los elementos */
 }
 
 .producto img,
 .producto-destacado img {
   max-width: 100%; 
-  height: auto;
+  height: auto; /* Ajusta la imagen al contenedor */
 }
-
 .cont-precio h3 {
   font-size: 1.2rem;
   margin: 10px 0;
