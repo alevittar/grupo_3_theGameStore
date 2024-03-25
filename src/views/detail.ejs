@@ -139,12 +139,12 @@
 
 </section>
 <div class="buttons-container">
-  <!-- Botón para eliminar -->
+  
 	<form action="/products/<%= product.id %>/delete/?_method=DELETE" method="POST" style="display: inline-flex">
     <button type="submit" class="action-button delete">BORRAR</button>
   </form>
 
-  <!-- Botón para ir a la vista de edición -->
+  
   <a href="/products/edit/<%= product.id %>" class="edit-button">Editar producto</a>
 </div>
 

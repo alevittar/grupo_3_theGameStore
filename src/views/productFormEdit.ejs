@@ -16,8 +16,8 @@
     <div class="container">
       <h1>Panel de Administrador</h1>
       <form action="/products/<%= product.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
-        <!-- Utiliza enctype="multipart/form-data" para manejar la carga de archivos -->
-        <input type="hidden" name="_method" value="PUT"> <!-- Utiliza _method para el override -->
+        
+        <input type="hidden" name="_method" value="PUT"> 
 
         <label for="name" class="form-label">Editando: <%= product.name %></label>
         <input type="text" id="name" name="name" value="<%= product.name %>" class="form-input">

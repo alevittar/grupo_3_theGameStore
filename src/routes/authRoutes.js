@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authControllers');
+const { isAuthenticated } = require('../middleware/authMiddleware');
+
 router.get('/login', (req, res) => {
-  console.log('GET /login - Usuario en la sesión:', req.session.usuario);
+  if (req.session.usuario) {
+    return res.redirect('/users/perfil');
+  }
   authController.showLoginForm(req, res);
 });
 
 router.post('/login', (req, res) => {
-  console.log('POST /login - Usuario en la sesión:', req.session.usuario);
   authController.login(req, res);
 });
 
 router.get('/logout', (req, res) => {
-  console.log('GET /logout - Usuario en la sesión:', req.session.usuario);
   authController.logout(req, res);
 });
 

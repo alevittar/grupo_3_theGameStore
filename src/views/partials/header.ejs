@@ -12,26 +12,25 @@
       <div id="icons">
         <a href="#">
           <img src="/img/localizacion.png" alt="localizacion" />
+          <span>ubicación</span>
         </a>
-        <a href="/login">
+        <a href="/users/perfil">
           <img src="/img/usuario.png" alt="user" />
+          <span>usuario</span>
         </a>
         <a href="#">
           <img src="/img/burbuja-de-dialogo.png" alt="chat" />
+          <span>Contacto</span>
         </a>
         <a href="/cart">
           <img src="/img/carrito-de-compras.png" alt="carrito-de-compras" />
+          <span>carrito</span>
         </a>
         <a href="#">
           <img src="/img/entrega.png" alt="envio" />
+          <span>envios</span>
         </a>
       </div>
-    </div>
-    <div id="user-container">
-      <% if (typeof usuario !== 'undefined') { %>
-        <% console.log('Usuario en la vista:', usuario) %>
-       <a href="/users/perfil"> <p><%= usuario.nombre %> <%= usuario.apellido %></p></a> 
-      <% } %>
     </div>
     <nav>
       <ul>

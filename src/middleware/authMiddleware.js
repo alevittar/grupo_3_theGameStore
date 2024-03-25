@@ -1,26 +1,17 @@
-  const withLogin = (req, res, next) => {
-      if(req.session.user === undefined){
-          res.redirect('/'); //Redirige al usuario a la pagina de inicio de sesion
-          return;
-      }
+const isAuthenticated = (req, res, next) => {
+  if (req.session.usuario) {
     next();
-  };
+  } else {
+    res.redirect('/login');
+  }
+};
 
-  const withoutLogin = (req, res, next) => {
-      if(req.session.user){
-          res.redirect('/'); //Redirige al usuario al perfil si ya esta autentificado
-          return;
-      }
+const isAdmin = (req, res, next) => {
+  if (req.session.usuario && req.session.usuario.role === 'admin') {
     next();
-  };
+  } else {
+    res.status(403).send('No tienes permiso para acceder a esta página');
+  }
+};
 
-  const adminLogin = (req, res, next) => {
-    if (!req.session.user || !req.session.user.isAdmin) {
-      res.redirect('/'); // Redirige al usuario si no es un administrador
-      return;
-    }
-    next();
-  };
-
-
-  module.exports = {withLogin, withoutLogin, adminLogin};
+module.exports = { isAuthenticated, isAdmin };

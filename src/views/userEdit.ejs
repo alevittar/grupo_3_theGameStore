@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-  <link rel="stylesheet" href="/css/register.css" type="text/css" />
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  <link rel="stylesheet" href="/css/userEdit.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <title>TheGameStore</title>
 </head>
 <body>
   <%- include('./partials/header') %>
 
-
   <main class="contenedorform">
-    <form action="/usuarios/<%= usuario.id %>/?_method=PUT" method="POST">
+    <form action="/usuarios/<%= usuario.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
       <div class="form">
         <h2 class="título">Edición de mi perfil</h2>
         <p>
-          <label for="firstName" class="form-label">firstName: <%= usuario.firstName %></label>
-          <input type="text" id="firstName" name="firstName" value="<%= usuario.firstName %>" >
+          <label for="firstName" class="form-label">Nombre:</label>
+          <input type="text" id="firstName" name="firstName" value="<%= usuario.first_Name %>" class="form-input">
         </p>
         <p>
-          <label class="info" for="lastName"> Apellido: <%=usuario.lastName %></label>
-          <input type="text" name="lastName" value="<%=usuario.lastName %>"  >
+          <label class="info" for="lastName">Apellido:</label>
+          <input type="text" name="lastName" value="<%= usuario.last_Name %>" class="form-input">
         </p>
         <p>
-          <label class="info" for="email"> Email: <%=usuario.email %></label>
-          <input type="email" name="email" id="email" value="<%=usuario.email %>">
+          <label class="info" for="email">Email:</label>
+          <input type="email" name="email" id="email" value="<%= usuario.email %>" class="form-input">
         </p>
-  
         <p>
-          <label class="info" for="password"> Contraseña:<%=usuario.password %></label>
-          <input type="password" name="password" id="password" value="<%=<usuario.password</usuario> %>">
+          <label class="info" for="password">Contraseña:</label>
+          <input type="password" name="password" id="password" class="form-input">
         </p>
-        <a href="usuarios/editar/<% usuario.id%"> 
-        <button type="submit" class="buy-now-button">Guardar producto</button>
-        </a>
+        <button type="submit" class="buy-now-button">Guardar perfil</button>
       </div>
     </form>
-  
-          
-  </main>
-  
-
   </main>
 
   <!-- Footer -->
   <%- include('./partials/footer') %>
-
 </body>
-
 </html>
