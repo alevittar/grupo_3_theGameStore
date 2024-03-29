@@ -58,17 +58,6 @@ app.use('/', mainRouter);
 app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
 
-app.get("/", (req, res) => {
-  let productFormHtml = path.resolve(__dirname, "./views/productForm.html");
-  res.sendFile(productFormHtml);
-});
-
-// Manejo de errores
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Algo salió mal!');
-});
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en el puerto ${PORT}`);

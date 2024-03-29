@@ -6,38 +6,47 @@
   <link rel="stylesheet" href="/css/styles.css" type="text/css">
   <link rel="stylesheet" href="/css/userEdit.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="/js/mostrarpassword.js"></script>
   <title>TheGameStore</title>
 </head>
 <body>
-  <%- include('./partials/header') %>
+  <% include('./partials/header') %>
 
   <main class="contenedorform">
-    <form action="/usuarios/<%= usuario.id %>" method="POST">
-      <input type="hidden" name="_method" value="PUT">
+    <form action="/users/editar/<%= usuario.id %>" method="POST" enctype="multipart/form-data">
       <div class="form">
         <h2 class="título">Edición de mi perfil</h2>
         <p>
           <label for="firstName" class="form-label">Nombre:</label>
-          <input type="text" id="firstName" name="firstName" value="<%= usuario.first_Name %>" class="form-input">
+          <input type="text" id="firstName" name="firstName" value="<%= usuario.first_name %>" class="form-input">
         </p>
         <p>
           <label class="info" for="lastName">Apellido:</label>
-          <input type="text" name="lastName" value="<%= usuario.last_Name %>" class="form-input">
+          <input type="text" name="lastName" value="<%= usuario.last_name %>" class="form-input">
+        </p>
+        <p>
+          <input type="file" name="image" id="image">
+          <input type="hidden" name="currentImage" value="<%= usuario.image %>">
+        </p>
+        <p>
+          <label class="info">Rol:</label>
+          <span><%= usuario.rol_id === 1 ? 'Usuario' : 'Admin' %></span>
+          <input type="hidden" name="role" value="<%= usuario.rol_id %>">
         </p>
         <p>
           <label class="info" for="email">Email:</label>
-          <input type="email" name="email" id="email" value="<%= usuario.email %>" class="form-input">
+          <input type="email" name="email" id="email" value="<%= usuario.email %>" class="form-input" readonly> <!-- Agregar el atributo readonly -->
         </p>
         <p>
           <label class="info" for="password">Contraseña:</label>
           <input type="password" name="password" id="password" class="form-input">
+          <button type="button" id="togglePassword">Mostrar password</button>
         </p>
         <button type="submit" class="buy-now-button">Guardar perfil</button>
       </div>
     </form>
   </main>
 
-  <!-- Footer -->
-  <%- include('./partials/footer') %>
+  <% include('./partials/footer') %>
 </body>
 </html>

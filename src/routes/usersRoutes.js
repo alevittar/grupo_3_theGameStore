@@ -4,10 +4,9 @@ const usersController = require('../controllers/usersControllers');
 const { isAuthenticated } = require('../middleware/authMiddleware');
 
 router.get('/perfil', isAuthenticated, usersController.mostrarPerfil);
-router.get('/create', isAuthenticated, usersController.create); 
-router.post('/create', isAuthenticated, usersController.store); 
+router.post('/create', usersController.store);
 router.get('/editar/:id', isAuthenticated, usersController.editar);
-router.put('/:id', isAuthenticated, usersController.update); 
-router.get('/:id', isAuthenticated, usersController.mostrarPerfil); 
+router.post('/editar/:id', isAuthenticated, usersController.update); 
+router.get('/editar/:id', isAuthenticated, usersController.mostrarPerfil);
 
 module.exports = router;

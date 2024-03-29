@@ -29,12 +29,20 @@
         <div class="user-info-item">
             <strong>Email:</strong> <%= user.email %>
         </div>
+        <div class="user-info-item">
+            <strong>Rol:</strong>
+            <% if (user.rol_id === 1) { %>
+                Usuario
+            <% } else if (user.rol_id === 2) { %>
+                Admin
+            <% } %>
+        </div>
     </div>
     <a href="/auth/logout" class="logout-button">Logout</a>
     <a href="/users/editar/<%= user.id %>" class="edit-profile-button">
-        <button>Edit</button>
+        <button>Editar</button>
     </a>
-</main>
+  </main>
 
   <%- include('./partials/footer') %>
 </body>

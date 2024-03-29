@@ -31,8 +31,7 @@ const authController = {
           email: email,
           nombre: usuarioAutenticado.first_name,
           apellido: usuarioAutenticado.last_name,
-          // Agregar el rol del usuario a la sesión
-          role: usuarioAutenticado.role // Suponiendo que el rol se almacena en el campo 'role' del modelo Usuario
+          rol: usuarioAutenticado.rol_id 
         };
         res.redirect('/');
       } else {

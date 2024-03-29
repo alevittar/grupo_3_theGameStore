@@ -20,7 +20,7 @@ const mainController = {
   },
 
   showRegisterPage: (req, res) => {
-    res.render('register', { pageTitle: 'Registro de Usuario' });
+    res.render('userForm');
   },
 
 };
