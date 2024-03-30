@@ -1,0 +1,37 @@
+.product-box {
+    background-color: #f0f0f0; /* Color de fondo gris */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior entre productos */
+    display: flex; /* Contenedor de productos en línea */
+    justify-content: space-between; /* Alineación horizontal */
+  }
+  
+  .product-info {
+    flex-grow: 1; /* Hace que la información del producto ocupe todo el espacio disponible */
+  }
+  
+  .product-actions {
+    display: flex; /* Botones de acciones en línea */
+    align-items: center; /* Alineación vertical */
+  }
+  
+  .product-actions form {
+    margin-left: 10px; /* Espaciado entre botones */
+  }
+  .product-actions button[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .product-actions button[type="submit"].edit {
+    background-color: #3498db; /* Azul celeste */
+    color: white;
+  }
+  
+  .product-actions button[type="submit"].delete {
+    background-color: #e74c3c; /* Rojo */
+    color: white;
+  }
+  

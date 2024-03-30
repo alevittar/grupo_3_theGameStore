@@ -4,6 +4,7 @@ const productosController = require('../controllers/productsControllers');
 const { isAdmin } = require('../middleware/authMiddleware'); 
 
 router.get('/', productosController.index);
+router.get('/list', productosController.adminProd);
 
 router.get('/create', productosController.create);
 router.post('/create', productosController.store);

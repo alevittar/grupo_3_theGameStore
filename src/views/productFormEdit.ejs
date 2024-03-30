@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-    <link rel="stylesheet" href="/css/productForm.css" type="text/css" />
-    <script src="/js/productoValidation.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <title>TheGameStore</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Panel de Administrador</h1>
-      <form action="/products/<%= product.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
-        
-        <input type="hidden" name="_method" value="PUT"> 
 
-        <label for="name" class="form-label">Editando: <%= product.name %></label>
-        <input type="text" id="name" name="name" value="<%= product.name %>" class="form-input">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/productForm.css" type="text/css" />
+  <script src="/js/productoValidation.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <title>TheGameStore</title>
+</head>
 
-        <label for="price" class="form-label">Precio del producto:</label>
-        <input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
+<body>
+  <div class="container">
+    <h1>Panel de Administrador</h1>
+    <form action="/products/<%= product.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
 
-        <label for="stock" class="form-label">Cantidad:</label>
-        <input type="text" id="stock" name="stock" value="<%= product.stock %>" class="form-input">
+      <input type="hidden" name="_method" value="PUT">
 
-        <label for="category" class="form-label">Categoría:</label>
-        <select name="category" id="category" class="form-input">
-          <option value="" <% if (!product.category || product.category === "") { %> selected <% } %>>Elegí</option>
-          <option value="1" <% if (product.category === "ofertas") { %> selected <% } %>>Oferta</option>
-          <option value="2" <% if (product.category === "populares") { %> selected <% } %>>Popular</option>
-        </select>
+      <label for="name" class="form-label">Editando: <%= product.name %></label>
+      <input type="text" id="name" name="name" value="<%= product.name %>" class="form-input">
 
-        <label for="description" class="form-label">Descipción:</label>
-        <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
+      <label for="price" class="form-label">Precio del producto:</label>
+      <input type="text" id="price" name="price" value="<%= product.price %>" class="form-input">
 
-        <label for="image" class="form-label">Imagen del producto:</label>
-        <input type="file" id="image" name="image" class="form-input">
+      <label for="stock" class="form-label">Cantidad:</label>
+      <input type="text" id="stock" name="stock" value="<%= product.stock %>" class="form-input">
 
-        <button type="submit" class="buy-now-button">Guardar producto</button>
-      </form>
-    </div>
-    <!-- Incluye el pie de página -->
-    <%- include('./partials/footer') %>
-  </body>
+      <label for="category" class="form-label">Categoría:</label>
+      <label for="category" class="form-label">Categoría:</label>
+      <select name="category" id="category" class="form-input">
+        <option value="" selected>Elegí</option>
+        <% categorias.forEach(categoria=> { %>
+          <option value="<%= categoria.id %>" <% if (product.Categoria && product.Categoria.id===categoria.id) { %>
+            selected <% } %>><%= categoria.nombre %>
+          </option>
+          <% }); %>
+      </select>
+      <label for="description" class="form-label">Descipción:</label>
+      <textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
+
+      <label for="image" class="form-label">Imagen del producto:</label>
+      <input type="file" id="image" name="image" class="form-input">
+
+      <button type="submit" class="buy-now-button">Guardar producto</button>
+    </form>
+  </div>
+  <!-- Incluye el pie de página -->
+  <%- include('./partials/footer') %>
+</body>
+
 </html>

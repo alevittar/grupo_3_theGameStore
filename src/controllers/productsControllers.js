@@ -13,8 +13,14 @@ const productosController = {
     }
   },
 
-  create: (req, res) => {
-    res.render("productForm");
+  create: async (req, res) => {
+    try {
+      const categorias = await productoService.getAllCategories();
+      res.render("productForm", { categorias });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
   },
 
   store: [
@@ -71,23 +77,22 @@ const productosController = {
       res.status(500).send('Error interno del servidor');
     }
   },
-
   edit: async (req, res) => {
     const { id } = req.params;
 
     try {
-      const product = await productoService.getById(id);
-
-      if (!product) {
-        return res.redirect("/products");
-      }
-
-      res.render("productFormEdit", { product });
+        const product = await productoService.getById(id);
+        const categorias = await productoService.getAllCategories();
+                if (!product) {
+            return res.redirect("/products");
+        }
+        console.log('Product Categoria:', product.Categoria);
+        res.render("productFormEdit", { product, categorias }); // Pasar categorías a la vista
     } catch (error) {
-      console.error(error);
-      res.status(500).send('Error interno del servidor');
+        console.error(error);
+        res.status(500).send('Error interno del servidor');
     }
-  },
+},
 
   update: async (req, res) => {
     const productId = req.params.id;
@@ -139,6 +144,16 @@ const productosController = {
       res.status(500).send('Error interno del servidor');
     }
   },
+  adminProd : async (req, res) => {
+    try {
+      const productos = await productoService.getAll();
+      const categorias = await productoService.getAllCategories(); 
+      res.render("adminProd", { productos, categorias });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
+  }
 };
 
 module.exports = productosController;

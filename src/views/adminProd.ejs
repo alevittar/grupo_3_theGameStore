@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Productos - TheGameStore</title>
+  <!-- Agrega estilos aquí si es necesario -->
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/listprod.css" type="text/css" />
+
+</head>
+<body>
+  <!-- Header -->
+  <%- include('./partials/header.ejs') %>
+  
+  <!-- Main content -->
+  <main>
+    <h1>Lista de Productos</h1>
+    
+    <!-- Formulario de filtro por categoría -->
+    <form action="/products/filter" method="GET">
+      <label for="category">Filtrar por categoría:</label>
+      <select name="category" id="category">
+        <% categorias.forEach(categoria => { %>
+          <option value="<%= categoria.id %>"><%= categoria.nombre %></option>
+        <% }); %>
+      </select>
+      <button type="submit">Filtrar</button>
+    </form>
+    
+    <div class="product-list">
+      <!-- Aquí se mostrarán los productos -->
+      <% productos.forEach(product => { %>
+        <div class="product-box">
+          <div class="product-info">
+            <h2><%= product.name %></h2>
+            <p>Stock: <%= product.stock %></p>
+            <p>Precio: $<%= product.price %></p>
+          </div>
+          <div class="product-actions">
+            <form action="/products/edit/<%= product.id %>" method="GET">
+              <button type="submit" class="edit">Editar</button>
+            </form>
+            <form action="/products/delete/<%= product.id %>" method="POST">
+              <button type="submit" class="delete">Borrar</button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </main>
+  
+  
+  
+  <!-- Footer -->
+  <%- include('./partials/footer') %>
+</body>
+</html>

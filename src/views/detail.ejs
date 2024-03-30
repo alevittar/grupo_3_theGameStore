@@ -41,6 +41,7 @@
                   <p class="description-text"><%= product.description %></p>
               </div>
               <div class="service">
+                <p><i class="fa-solid fa-tags"></i> Categoría: <%= product.Categoria ? product.Categoria.nombre : 'Sin categoría' %></p>
                   <p><i class="fa-solid fa-shield-halved"></i> Garantía - 12 meses</p>
                   <p><i class="price">$ <%= product.price %> </p>
                   <p><i class="fa-solid fa-check"></i> Stock disponible: <span class="stock <%= product.stock < 1 ? 'out-of-stock' : '' %>"><%= product.stock %></span></p>
