@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <%- include('./partials/header') %>
   <div class="container">
     <h1>Panel de Administrador</h1>
     <form action="/products/<%= product.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">

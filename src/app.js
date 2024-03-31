@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const usersRoutes = require('./routes/usersRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 const multer = require('multer'); // Importa multer
 
 const app = express();
@@ -57,7 +58,7 @@ app.use('/users', usersRoutes);
 app.use('/', mainRouter);
 app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
-
+app.use('/contacts', contactRoutes);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en el puerto ${PORT}`);

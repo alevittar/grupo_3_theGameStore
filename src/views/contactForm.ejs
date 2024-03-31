@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/css/productForm.css" type="text/css" />
+    <script src="/js/productoValidation.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>TheGameStore</title>
+  </head>
+  
+  <body>
+    <%- include('./partials/header') %>
+    <div class="container">
+      <h1>Formulario de Contacto</h1>
+      <form
+        action="/contacts/create"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+      <label for="firstName" class="form-label">Nombre:</label>
+      <input type="text" id="firstName" name="firstName" placeholder="Ej: Juan" class="form-input">
+      <small id="firstNameError" class="error-message"></small>
+  
+
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" name="email" placeholder="usuario@correo.com" class="form-input">
+      <small id="emailError" class="error-message"></small>
+
+
+        <label for="consulta" class="form-label">Consulta:</label>
+        <textarea
+          name="consulta"
+          id="consulta"
+          class="form-input"
+          required
+        ></textarea>
+
+
+        <button type="submit" class="buy-now-button">Enviar Consulta</button>
+      </form>
+    </div>
+    <!-- Incluye el pie de página -->
+    <%- include('./partials/footer') %>
+  </body>
+</html>
