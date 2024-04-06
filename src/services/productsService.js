@@ -1,25 +1,26 @@
-const { Producto , Categoria } = require('../database/models');
+const { Producto, Categoria } = require('../database/models');
 
 const productoService = {
- getAll: async () => {
-  try {
-    return await Producto.findAll({
-      include: { model: Categoria, as: 'Categoria' } // Incluir la relación con la categoría
-    });
-  } catch (error) {
-    console.error('Error al obtener productos desde la base de datos:', error);
-    throw new Error('Error al obtener productos desde la base de datos');
-  }
-},
+  getAll: async () => {
+    try {
+      return await Producto.findAll({
+        include: { model: Categoria, as: 'Categoria' }
+      });
+    } catch (error) {
+      console.error('Error al obtener productos desde la base de datos:', error);
+      throw new Error('Error al obtener productos desde la base de datos');
+    }
+  },
 
-getById: async (productId) => {
-  try {
+  getById: async (productId) => {
+    try {
       return await Producto.findByPk(productId, { include: { model: Categoria, as: 'Categoria' } });
-  } catch (error) {
+    } catch (error) {
       console.error('Error al obtener el producto desde la base de datos:', error);
       throw new Error('Error al obtener el producto desde la base de datos');
-  }
-},
+    }
+  },
+
   create: async (productoData) => {
     try {
       const newProducto = await Producto.create(productoData);
@@ -34,7 +35,6 @@ getById: async (productId) => {
       const [updatedRows] = await Producto.update(updatedProductData, {
         where: { id: productId },
       });
-
       return updatedRows > 0;
     } catch (error) {
       console.error('Error al actualizar el producto en la base de datos:', error);
@@ -52,15 +52,36 @@ getById: async (productId) => {
       throw new Error('Error al eliminar el producto de la base de datos');
     }
   },
-    getAllCategories: async () => {
-      try {
-        return await Categoria.findAll();
-      } catch (error) {
-        console.error('Error al obtener categorías desde la base de datos:', error);
-        throw new Error('Error al obtener categorías desde la base de datos');
-      }
-    },
-  
+
+  getAllCategories: async () => {
+    try {
+      return await Categoria.findAll();
+    } catch (error) {
+      console.error('Error al obtener categorías desde la base de datos:', error);
+      throw new Error('Error al obtener categorías desde la base de datos');
+    }
+  },
+
+  getProductosPorCategoria: async (categoryId) => {
+    try {
+      return await Producto.findAll({
+        where: { category_id: categoryId },
+        include: { model: Categoria, as: 'Categoria' }
+      });
+    } catch (error) {
+      console.error('Error al obtener productos por categoría desde la base de datos:', error);
+      throw new Error('Error al obtener productos por categoría desde la base de datos');
+    }
+  },
+
+  getCategoriaById: async (categoryId) => {
+    try {
+      return await Categoria.findByPk(categoryId);
+    } catch (error) {
+      console.error('Error al obtener la categoría desde la base de datos:', error);
+      throw new Error('Error al obtener la categoría desde la base de datos');
+    }
+  }
 };
 
 module.exports = productoService;

@@ -15,5 +15,6 @@ router.get('/detail/:id', productosController.detail);
 router.get('/edit/:id', isAdmin, productosController.edit);
 router.put('/:id', isAdmin, productosController.update);
 router.delete('/:id/delete', isAdmin, productosController.destroy);
+router.get('/categoria/:id', productosController.productosPorCategoria);
 
 module.exports = router;

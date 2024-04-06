@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const usersRoutes = require('./routes/usersRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const multer = require('multer'); // Importa multer
-
+const categoriaMiddleware = require('./middleware/categoriasMiddleware.js');
 const app = express();
 
 let pathPublic = path.resolve("public");
@@ -38,6 +38,7 @@ app.use((req, res, next) => {
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(categoriaMiddleware);
 
 const profilesDir = path.resolve(__dirname, '../public/img'); // 
 const storage = multer.diskStorage({

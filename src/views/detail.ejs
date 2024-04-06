@@ -46,8 +46,11 @@
                   <p><i class="price">$ <%= product.price %> </p>
                   <p><i class="fa-solid fa-check"></i> Stock disponible: <span class="stock <%= product.stock < 1 ? 'out-of-stock' : '' %>"><%= product.stock %></span></p>
                   <p><i class="fa-solid fa-cart-shopping"></i> Envíos a todo el país</p>
-                  <button class="add-to-cart-button">Agregar al carrito</button>
-              </div>
+                  <form action="/cart/add" method="post">
+                    <input type="hidden" name="productId" value="<%= productId %>">
+                    <button class="add-to-cart-button" type="submit">Agregar al carrito</button>
+                  </form>
+                </div>
           </article>
       </section>
   </main>

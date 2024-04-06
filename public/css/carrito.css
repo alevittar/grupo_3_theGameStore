@@ -1,103 +1,76 @@
-.contenedor-general{
-    background-color: gray;
-    width: 90%;
-    color: black;
-    text-align: center;
-    align-items: center;
+/* styles.css */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
- .titulo{
-    color: rgb(2, 19, 38);
-    font-size: 30px;
- }
-
-
- .contenedor-producto{
-   display: flex;
-    background-color: antiquewhite;
-    width: 90%;
-    padding: 20px;
- }
-
- .foto-producto{
-    width: 40%;
-    padding: 10px;
- }
-
- .articulo{
-   align-items: center;
-   width: 60%;
-   padding: 10px;
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
 }
 
-.nombre-producto{
-   color: black;
-   font-size: 30px;
-   font-weight: bold;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-
-.descripcion-producto{
-   color: gray;
-   font-size: 20px;
+.products {
+  display: grid;
+  grid-gap: 20px;
+  justify-items: center;
 }
 
-.calificacion-producto{
-   color: red;
-   font-size: 40px;
+.product-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-
-
-
-.datos-de-envio{
-   background-color: indianred;
-   display: flex;
-   width: 90%;
-   padding: 20px;
+.product {
+  display: flex;
+  align-items: center;
 }
 
-.codigo-postal{
-width: 40%;
-padding: 10px;
+.product img {
+  width: 100%;
+  max-width: 200px; /* Tamaño máximo de la imagen */
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
-.costo-de-envio{
-width: 40%;
-padding: 10px;
+.details {
+  flex: 1;
 }
 
-.punto-de-retiro{
-width: 40%;
-padding: 10px;
+.total {
+  margin-top: 20px;
 }
 
-.total{
-width: 40%;
-padding: 10px;
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-
-
-.pagar{
-
-       /*display: flex;*/
-       background-color: antiquewhite;
-       width: 90%;
-       padding: 20px;
+button:hover {
+  background-color: #555;
 }
 
-.metodo-de-pago{
-   align-items: center;
-   padding: 10px;
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cambiar el tamaño de las columnas en pantallas pequeñas */
+  }
+
+  .product img {
+    max-width: 150px; /* Reducir el tamaño máximo de la imagen en pantallas pequeñas */
+  }
 }
-
-.boton-de-pagar{
-   align-items: center;
-   padding: 10px;
-}
-
-
-
-

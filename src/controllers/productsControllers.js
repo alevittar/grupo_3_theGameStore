@@ -71,28 +71,31 @@ const productosController = {
         return res.redirect("/products");
       }
 
-      res.render("detail", { product });
+      res.render("detail", { product, productId: id });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error interno del servidor');
     }
   },
+
   edit: async (req, res) => {
     const { id } = req.params;
 
     try {
-        const product = await productoService.getById(id);
-        const categorias = await productoService.getAllCategories();
-                if (!product) {
-            return res.redirect("/products");
-        }
-        console.log('Product Categoria:', product.Categoria);
-        res.render("productFormEdit", { product, categorias }); // Pasar categorías a la vista
+      const product = await productoService.getById(id);
+      const categorias = await productoService.getAllCategories();
+
+      if (!product) {
+        return res.redirect("/products");
+      }
+
+      console.log('Product Categoria:', product.Categoria);
+      res.render("productFormEdit", { product, categorias }); // Pasar categorías a la vista
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
     }
-},
+  },
 
   update: async (req, res) => {
     const productId = req.params.id;
@@ -125,7 +128,7 @@ const productosController = {
         return res.redirect(`/products/detail/${productId}`);
       }
 
-      return res.redirect('/products'); // O redirige a otra página según tus necesidades
+      return res.redirect('/products');
     } catch (error) {
       console.error(error);
       res.status(500).send('Error interno del servidor');
@@ -144,11 +147,24 @@ const productosController = {
       res.status(500).send('Error interno del servidor');
     }
   },
-  adminProd : async (req, res) => {
+
+  adminProd: async (req, res) => {
     try {
       const productos = await productoService.getAll();
-      const categorias = await productoService.getAllCategories(); 
+      const categorias = await productoService.getAllCategories();
       res.render("adminProd", { productos, categorias });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
+  },
+
+  productosPorCategoria: async (req, res) => {
+    const categoryId = req.params.id;
+    try {
+      const productos = await productoService.getProductosPorCategoria(categoryId);
+      const categoria = await productoService.getCategoriaById(categoryId); // Obtener la categoría seleccionada
+      res.render('categorias', { productos, categoria });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error interno del servidor');

@@ -35,13 +35,17 @@
     </div>
     <nav>
       <ul>
-<!--        <li><a href="#">Categorias</a></li> -->
         <li><a href="/products">Productos</a></li>
-<!--    <li><a href="#">Calcular envio</a></li> -->
-        <li><a href="/users/perfil">Acceso Usuarios</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Categorías</a>
+          <div class="dropdown-content">
+            <% categorias.forEach(categoria => { %>
+              <a href="/products/categoria/<%= categoria.id %>"><%= categoria.nombre %></a>
+            <% }); %>
+          </div>
+        </li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="/contacts/create">Contacto</a></li>
-<!--    <li><a href="#">Ayuda</a></li> -->
       </ul>
     </nav>
   </header>
