@@ -3,7 +3,7 @@
   position: absolute;
   min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1000;
+  z-index: 1000 ;
 }
 
 /* Mostrar las opciones de categorías cuando se haga hover sobre el enlace "Categorías" */
@@ -85,14 +85,14 @@ li {
   padding: 0;
 }
 
-/* Estilo para cada pestaña de navegación */
+
 li a {
   text-decoration: none;
-  color: #fff; /* Color del texto de las pestañas */
-  padding: 10px 20px; /* Espacio entre las pestañas */
-  border: 2px solid #555; /* Borde de las pestañas */
-  border-radius: 5px; /* Bordes redondeados de las pestañas */
-  margin: 0 10px; /* Espacio entre las pestañas */
+  color: #fff; 
+  padding: 10px 20px; 
+  border: 2px solid #555;
+  border-radius: 5px;
+  margin: 0 10px; 
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -129,29 +129,21 @@ li a:hover {
   margin-top: 20px;
 }
 
-.producto,
-.producto-destacado {
-  flex: 0 0 calc(20% - 20px);
-  gap: 5px;
-  height: 300px; /* Establece una altura fija para los elementos */
-}
 
 .producto img,
 .producto-destacado img {
+  background-color: #fff;
   max-width: 100%; 
-  height: auto; /* Ajusta la imagen al contenedor */
+  height: 90%;
 }
 .cont-precio h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin: 10px 0;
-}
-.producto p {
-  font-weight: bold;
 }
 footer {
   display: flex;
   justify-content: space-between; 
-  background-color: #136b58;
+  background-color:  #7f7f7f;
   color: #fff;
   margin-top: 0;
 }
@@ -171,37 +163,30 @@ footer {
 .formas-pagos {
   display: flex;
   justify-content: center;
-  background-color: #136b58;
+  background-color:  #7f7f7f;
 }
 
 .social-icon,
 .formas-pago {
-  margin: 0 10px; /* Espacio entre los íconos de redes sociales */
+  margin: 0 10px; 
 }
 
-/* Ajusta el tamaño de los íconos */
+
 .social-icon img {
 
   width: 60px;
-  /*height: 50px; */
-  background-color: #136b58;
+  background-color:  #7f7f7f;
   margin-left: 20px;
-
-
-  /*width: 40px;  Ancho deseado para los íconos (ajusta según el tamaño de una moneda) 
-  background-color: #fff;
-  height: 40px; /* Alto deseado para los íconos (ajusta según el tamaño de una moneda) 
-  border-radius: 10px;*/
 }
 
 .formas-pago img {
   width: 60px;
   /*height: 50px; */
-  background-color: #136b58;
+  background-color:  #7f7f7f;
   margin-left: 20px;
 }
 header {
-  background-color: #136b58;
+  background-color:  #7f7f7f;
 }
 
 #top-header {
@@ -266,12 +251,12 @@ li {
 }
 
 li a {
-  background-color: #4f5352;
+  background-color: #464646;
   text-decoration: none;
   color: #fff;
   padding: 10px 20px;
   border: 2px solid #555;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 0 5px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -283,14 +268,19 @@ li a:hover {
 
 .producto,
 .producto-destacado {
+  flex: 0 0 calc(20% - 20px);
   text-align: center;
   margin: 5px;
   padding: 10px;
-  border: 1px solid black;
-  background-color: #4a8b7d;
-  max-width: 240px;
+  border: 1px solid rgb(39, 38, 38);
+  background-color: #8faaa4;
+  max-width: 250px;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  gap: 5px;
+  height: 350px; /
 }
+
+
 a {
   color: #333;
   text-decoration: none;
@@ -305,14 +295,17 @@ a {
 }
 
 .cont-precio h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 10px;
 }
 
 .cont-precio p {
-  font-size: 14px;
-  text-align: left;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #12411c;
 }
 #todos-los-productos h2 {
   display: flex;
@@ -325,7 +318,7 @@ a {
 }
 
 
-@media (max-width: 380px) {
+@media (max-width: 766px) {
   #top-header {
     display: flex;
     flex-direction: column;
@@ -343,6 +336,7 @@ a {
     width: 80%;
 }
   #icons {
+    
     width: 90%;
     justify-content: center;
     margin-top: 10px;
@@ -401,8 +395,6 @@ a {
     color: #fff;
   }
   
-}
-@media (min-width: 381px) {
     .carousel-container {
       max-width: 90%; 
     }
@@ -473,7 +465,7 @@ a {
     }
     #icons {
       width: 45%;
-      gap:2%
+      gap:10%
     }
     footer{
       flex-wrap: wrap;
@@ -549,10 +541,39 @@ nav ul li{
 @media screen and (min-width: 990px) {
   #user-container a{
     position: relative;
-    top: -150px; /* Ajusta la posición vertical según tus necesidades */
-    margin-right: 5%; /* Ajusta la posición horizontal según tus necesidades */
+    top: -150px;
+    margin-right: 5%;
     display: flex;
     justify-content: flex-end;
     color: white;
   }
+}
+.dropdown-horizontal {
+  display: flex;
+}
+
+.dropdown-horizontal .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-horizontal .dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.dropdown-horizontal .dropdown-content a {
+  display: block;
+  padding: 10px;
+  margin: 0 5px;
+  color: white; /* Color de texto para las categorías */
+  text-decoration: none;
+  border: 2px solid #555; /* Borde de las categorías */
+  border-radius: 5px; /* Bordes redondeados de las categorías */
+  transition: background-color 0.3s, color 0.3s;
 }

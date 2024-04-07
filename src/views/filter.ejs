@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos Filtrados - TheGameStore</title>
+  <!-- Agrega estilos aquí si es necesario -->
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/listprod.css" type="text/css" />
+</head>
+<body>
+  <!-- Header -->
+  <%- include('./partials/header.ejs') %>
+  
+  <!-- Main content -->
+  <main>
+    <h1>Productos Filtrados</h1>
+    <h2>Categoría: <%= categoria.nombre %></h2>
+    
+    <div class="product-list">
+      <% if (productos.length === 0) { %>
+        <p>No hay productos en esta categoría.</p>
+      <% } else { %>
+        <!-- Mostrar solo productos de la categoría seleccionada -->
+        <% productos.forEach(product => { %>
+          <div class="product-box">
+            <div class="product-info">
+              <h2><%= product.name %></h2>
+              <p>Stock: <%= product.stock %></p>
+              <p>Precio: $<%= product.price %></p>
+            </div>
+            <div class="product-actions">
+              <form action="/products/edit/<%= product.id %>" method="GET">
+                <button type="submit" class="edit">Editar</button>
+              </form>
+              <form action="/products/delete/<%= product.id %>" method="POST">
+                <button type="submit" class="delete">Borrar</button>
+              </form>
+            </div>
+          </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

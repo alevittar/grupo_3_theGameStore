@@ -169,6 +169,17 @@ const productosController = {
       console.error(error);
       res.status(500).send('Error interno del servidor');
     }
+  },
+  filter: async (req, res) => {
+    const categoryId = req.query.category; // Obtener el categoryId del query string
+    try {
+      const productos = await productoService.getProductosPorCategoria(categoryId);
+      const categoria = await productoService.getCategoriaById(categoryId); // Obtener la categoría seleccionada
+      res.render('filter', { productos, categoria }); // Renderizar la vista con los productos y la categoría
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
   }
 };
 

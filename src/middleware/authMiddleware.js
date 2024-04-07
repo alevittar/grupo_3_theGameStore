@@ -8,11 +8,13 @@ const isAuthenticated = (req, res, next) => {
 
 const isAdmin = (req, res, next) => {
   if (req.session.usuario && req.session.usuario.rol === 2) {
-    next();
+    res.locals.isAdmin = true;
   } else {
-    res.status(403).send('No tienes permiso para acceder a esta página');
+    res.locals.isAdmin = false;
   }
+  next();
 };
+
 
 const redirectIfAuthenticated = (req, res, next) => {
   if (req.session.usuario) {
