@@ -27,7 +27,7 @@
             <p>Precio: $<%= product.price %></p>
             <p>Cantidad: <%= product.quantity %></p>
             <form action="/cart/remove/<%= product.id %>" method="POST">
-              <button class="btn" type="submit">Eliminar</button>
+              <button class="btn-delete" type="submit">Eliminar</button>
             </form>
           </div>
         </div>
@@ -35,7 +35,8 @@
     </div>
     <div class="total">
       <h2>Total: $<%= total %></h2>
-      <button onclick="checkout()">Pagar</button>
+      
+      <button class="btn-checkout" onclick="checkout()">Pagar</button>
     </div>
   <% } else { %>
     <p>No hay productos en el carrito.</p>

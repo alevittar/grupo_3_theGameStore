@@ -23,5 +23,11 @@ const redirectIfAuthenticated = (req, res, next) => {
     next();
   }
 };
-
-module.exports = { isAuthenticated, isAdmin, redirectIfAuthenticated };
+const restrictToAdmin = (req, res, next) => {
+  if (req.session.usuario && req.session.usuario.rol === 2) {
+    next();
+  } else {
+    res.status(403).send('Acceso denegado. Esta función solo está disponible para administradores.');
+  }
+};
+module.exports = { isAuthenticated, isAdmin, redirectIfAuthenticated ,restrictToAdmin };

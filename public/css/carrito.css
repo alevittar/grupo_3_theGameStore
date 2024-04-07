@@ -49,6 +49,10 @@ h1 {
 
 .total {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 button {
@@ -63,7 +67,18 @@ button {
 button:hover {
   background-color: #555;
 }
+.btn-delete {
+  background-color: red;
+}
 
+.btn-checkout {
+  background-color: green;
+}
+
+.btn-delete:hover,
+.btn-checkout:hover {
+  filter: brightness(90%);
+}
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .products {
