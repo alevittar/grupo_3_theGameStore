@@ -12,6 +12,7 @@ const contactRoutes = require('./routes/contactRoutes');
 const multer = require('multer');
 const categoriaMiddleware = require('./middleware/categoriasMiddleware.js');
 const { isAuthenticated, isAdmin, redirectIfAuthenticated } = require('./middleware/authMiddleware');
+const apiRoutes = require('./routes/apiRoutes.js');
 const app = express();
 
 let pathPublic = path.resolve("public");
@@ -64,7 +65,7 @@ app.use('/', mainRouter);
 app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
 app.use('/contacts', contactRoutes);
-
+app.use('/api', apiRoutes);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en el puerto ${PORT}`);
