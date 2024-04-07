@@ -318,7 +318,7 @@ a {
 }
 
 
-@media (max-width: 766px) {
+@media (max-width: 768px) {
   #top-header {
     display: flex;
     flex-direction: column;
