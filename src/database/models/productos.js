@@ -35,6 +35,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: true,
         },
+        createdAt: { // Agregar la columna createdAt
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP'), // Valor por defecto como la fecha y hora actual
+        },
     };
     let config = {
         tableName: 'productos',
@@ -42,12 +47,13 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     let Producto = sequelize.define(alias, columns, config);
+
     Producto.associate = (models) => {
         Producto.belongsTo(models.Categoria, {
-          as: "Categoria", 
-          foreignKey: 'category_id'
+            as: 'Categoria',
+            foreignKey: 'category_id',
         });
-      };
+    };
 
     return Producto;
 };

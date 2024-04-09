@@ -14,7 +14,7 @@ const categoriaMiddleware = require('./middleware/categoriasMiddleware.js');
 const { isAuthenticated, isAdmin, redirectIfAuthenticated } = require('./middleware/authMiddleware');
 const apiRoutes = require('./routes/apiRoutes.js');
 const app = express();
-
+const cors = require('cors');
 let pathPublic = path.resolve("public");
 app.use(express.static(pathPublic));
 
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser());
-
+app.use(cors());
 // Configura express-session
 app.use(session({
   secret: 'tu_secreto_aqui',
