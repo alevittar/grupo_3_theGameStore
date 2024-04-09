@@ -161,3 +161,38 @@ Las respuestas ofrecen ideas valiosas para optimizar el desarrollo y fortalecer 
 1. Seguir manteniendo la comunicación y la división de tareas.
 2. Comunicación activa.
 
+
+
+# Informe Sprint 8 
+
+A continuación se reflejará la retrospectiva del equipo con la Metodologia Estrella de Mar retomando la actividad que fuera discontinuada en sprints anteriores
+
+
+
+# FEEDBACK : METODOLOGÍA ESTRELLA 
+
+## Qué cosas / actividades / prácticas deberíamos hacer más?
+
+1. Coordinar un horario fijo de reunión y que sea prioridad.
+2. Empezar a retocar detalles para mejorar del proyecto con lo aprendido hasta el momento.
+
+## Qué cosas / actividades / prácticas deberíamos hacer menos?
+
+1. No hacer menos de lo que venimos haciendo.
+2. Ninguna.
+
+## Qué cosas / actividades / prácticas deberíamos comenzar a hacer?
+
+1. Empezar a depurar el código y la estética del proyecto para la versión final analizando la posibilidad de elaborar con mas detalle una version comercial del mismo ya sea dentro del rubro para el que fue creado o usarlo de base para otro tipo de comercio.
+
+2. Evaluar la posible incorporacion de nuevas funcionalidades.
+
+## Qué cosas / actividades / prácticas deberíamos dejar de hacer?
+
+1. No dejar de hacer nada de lo que venimos haciendo.
+2. Ninguna.
+
+## Qué cosas / actividades / prácticas recomendarían seguir haciendo?
+
+1. Comunicación activa.
+
