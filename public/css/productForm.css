@@ -61,3 +61,21 @@
     display: block;
     margin-top: 5px;
   }
+
+
+  .nosotros {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nosotros h1,
+  .nosotros h2,
+  .nosotros h3 {
+    text-align: justify;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
