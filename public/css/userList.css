@@ -1,0 +1,33 @@
+.user-box {
+    background-color: #f0f0f0; /* Color de fondo gris */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior entre usuarios */
+    display: flex; /* Contenedor de usuarios en línea */
+    justify-content: space-between; /* Alineación horizontal */
+  }
+  
+  .user-info {
+    flex-grow: 1; /* Hace que la información del usuario ocupe todo el espacio disponible */
+  }
+  
+  .user-actions {
+    display: flex; /* Botones de acciones en línea */
+    align-items: center; /* Alineación vertical */
+  }
+  
+  .user-actions form {
+    margin-left: 10px; /* Espaciado entre botones */
+  }
+  
+  .user-actions button[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .user-actions button[type="submit"].change-role {
+    background-color: #3498db; /* Azul celeste */
+    color: white;
+  }
+  

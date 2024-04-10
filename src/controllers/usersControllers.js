@@ -68,6 +68,37 @@ const userController = {
       res.redirect('/error');
     }
   },
+  mostrarCambiarRol: async (req, res) => {
+    try {
+      const usuario = await userService.getUsuarioById(req.params.id);
+      res.render('rolEdit', { usuario });
+    } catch (error) {
+      console.error('Error al cargar la vista para cambiar el rol del usuario:', error);
+      res.redirect('/error');
+    }
+  },
+  actualizarRol: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { rol_id } = req.body;
+  
+      await userService.updateRol(id, rol_id);
+  
+      res.redirect('/users/perfil');
+    } catch (error) {
+      console.error('Error al actualizar el rol del usuario:', error);
+      res.redirect('/error');
+    }
+  },
+  mostrarListaUsuarios: async (req, res) => {
+    try {
+      const usuarios = await userService.getAllUsuarios();
+      res.render('userList', { usuarios });
+    } catch (error) {
+      console.error('Error al cargar la lista de usuarios:', error);
+      res.redirect('/error');
+    }
+  }
 };
 
 module.exports = userController;

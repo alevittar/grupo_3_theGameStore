@@ -80,6 +80,17 @@ const userService = {
       console.error('Error al obtener usuarios por rol desde la base de datos:', error);
       throw new Error('Error al obtener usuarios por rol desde la base de datos');
     }
+  },
+  updateRol: async (userId, newRolId) => {
+    try {
+      await Usuario.update(
+        { rol_id: newRolId },
+        { where: { id: userId } }
+      );
+    } catch (error) {
+      console.error('Error al actualizar el rol del usuario:', error);
+      throw new Error('Error al actualizar el rol del usuario');
+    }
   }
 };
 

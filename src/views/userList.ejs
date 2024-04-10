@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Usuarios - TheGameStore</title>
+  <!-- Agrega estilos aquí si es necesario -->
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  <link rel="stylesheet" href="/css/userList.css" type="text/css">
+</head>
+<body>
+  <!-- Header -->
+  <%- include('./partials/header.ejs') %>
+  
+  <!-- Main content -->
+  <main>
+    <h1>Lista de Usuarios</h1>
+    <div class="user-list">
+      <% usuarios.forEach(usuario => { %>
+        <div class="user-box">
+          <div class="user-info">
+            <h2><%= usuario.first_name %> <%= usuario.last_name %></h2>
+            <p>Email: <%= usuario.email %></p>
+            <p>Rol: <%= usuario.rol_id === 1 ? 'Usuario Normal' : 'Administrador' %></p>
+          </div>
+          <div class="user-actions">
+            <form action="/users/editarRol/<%= usuario.id %>" method="GET">
+              <button type="submit" class="change-role">Cambiar Rol</button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <%- include('./partials/footer') %>
+</body>
+</html>

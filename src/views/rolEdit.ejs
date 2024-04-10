@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambio de rol - TheGameStore</title>
+  <!-- Agrega estilos aquí si es necesario -->
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  <link rel="stylesheet" href="/css/cambio.css" type="text/css">
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+  <div class="profile">
+    <h1>Datos del Usuario</h1>
+    <div class="profile-info">
+      <p><strong>Nombre:</strong> <%= usuario.first_name %> <%= usuario.last_name %></p>
+      <p><strong>Email:</strong> <%= usuario.email %></p>
+      <p><strong>Rol Actual:</strong> <%= usuario.rol_id === 1 ? 'Usuario Normal' : 'Administrador' %></p>
+    </div>
+    <h2>Cambiar Rol</h2>
+    <form action="/users/editarRol/<%= usuario.id %>" method="POST">
+      <label for="rol_id">Selecciona el nuevo Rol:</label>
+      <select name="rol_id" id="rol_id">
+        <option value="1">Usuario Normal</option>
+        <option value="2">Administrador</option>
+      </select>
+      <button type="submit">Actualizar Rol</button>
+    </form>
+  </div>
+  <%- include('./partials/footer') %>
+</body>
+</html>

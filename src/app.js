@@ -66,6 +66,9 @@ app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
 app.use('/contacts', contactRoutes);
 app.use('/api', apiRoutes);
+
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en el puerto ${PORT}`);
