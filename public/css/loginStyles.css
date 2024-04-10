@@ -51,3 +51,16 @@ main {
   justify-content: center;
   padding: 3px;
 }
+#rememberMeContainer {
+  display: flex;
+  align-items: center; 
+  margin-top: 10px; 
+}
+
+#rememberMe {
+  margin-right: 5px; 
+}
+
+#rememberMeText {
+  font-size: 14px;
+}

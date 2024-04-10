@@ -7,6 +7,7 @@ const productsRouter = require('./routes/productsRoutes.js');
 const methodOverride = require('method-override');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const rememberMeMiddleware = require("./middleware/rememberMiddleware")
 const usersRoutes = require('./routes/usersRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const multer = require('multer');
@@ -18,13 +19,13 @@ const cors = require('cors');
 let pathPublic = path.resolve("public");
 app.use(express.static(pathPublic));
 
-// Configura body-parser
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(cors());
-// Configura express-session
+app.use(rememberMeMiddleware);
 app.use(session({
   secret: 'tu_secreto_aqui',
   resave: false,
