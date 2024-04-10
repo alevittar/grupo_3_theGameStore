@@ -6,5 +6,5 @@ const mainController = require('../controllers/mainControllers');
 router.get('/', mainController.home);
 router.get('/login',redirectIfAuthenticated, mainController.showLoginPage);
 router.get('/users/create',redirectIfAuthenticated, mainController.showRegisterPage);
-router.get('/', mainController.show);
+router.get('/nosotros', mainController.show);
 module.exports = router;

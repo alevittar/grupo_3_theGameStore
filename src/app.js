@@ -3,7 +3,6 @@ const path = require("path");
 const session = require('express-session');
 const mainRouter = require('./routes/mainRoutes.js');
 const cartRouter = require('./routes/cartRoutes.js');
-const nosotrosRouter = require('./routes/nosotrosRoutes.js');
 const productsRouter = require('./routes/productsRoutes.js');
 const methodOverride = require('method-override');
 const authRoutes = require('./routes/authRoutes');
@@ -67,7 +66,6 @@ app.use('/cart', cartRouter);
 app.use('/products', productsRouter);
 app.use('/contacts', contactRoutes);
 app.use('/api', apiRoutes);
-app.use('/nosotros', nosotrosRouter);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor en ejecución en el puerto ${PORT}`);
