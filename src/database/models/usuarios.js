@@ -26,6 +26,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       defaultValue: null,
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   });
 
   Usuario.associate = (models) => {

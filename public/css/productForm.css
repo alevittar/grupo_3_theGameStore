@@ -1,81 +1,51 @@
-/* Reset de estilos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Estilos generales */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-label {
-    margin-top: 10px;
-  }
-  
-  .form-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .buy-now-button {
-    background-color: #7400b8;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .buy-now-button:hover {
-    background-color: #45a049;
-  }
-  .validation-message {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
-  }
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
 
+/* Estilos específicos del panel de administrador */
+.admin-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .nosotros {
-    width: 80%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nosotros h1,
-  .nosotros h2,
-  .nosotros h3 {
-    text-align: justify;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
+.admin-form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form-container .form-label {
+  margin-top: 10px;
+}
+
+.admin-form-container .form-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-form-container .buy-now-button {
+  background-color: #7400b8;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-form-container .buy-now-button:hover {
+  background-color: #45a049;
+}

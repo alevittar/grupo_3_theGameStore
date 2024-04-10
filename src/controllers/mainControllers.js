@@ -22,6 +22,10 @@ const mainController = {
   showRegisterPage: (req, res) => {
     res.render('userForm');
   },
+  show: (req, res) => {
+
+    res.render('nosotros'); 
+  }
 
 };
 

@@ -17,5 +17,5 @@ router.put('/:id' ,restrictToAdmin, isAdmin, productosController.update);
 router.delete('/:id/delete',restrictToAdmin, isAdmin, productosController.destroy);
 router.get('/categoria/:id', productosController.productosPorCategoria);
 router.get('/filter',restrictToAdmin,isAdmin, productosController.filter);
-
+router.get('/search', productosController.search);
 module.exports = router;

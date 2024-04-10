@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { Categoria } = require('../database/models');
 const apiService = require('../services/apiService');
 
 router.get('/productos', async (req, res) => {
@@ -14,7 +15,7 @@ router.get('/productos', async (req, res) => {
 
 router.get('/categorias', async (req, res) => {
   try {
-    const categorias = await apiService.getAllCategories();
+    const categorias = await apiService.getAllCategorias();
     
     if (!categorias || categorias.length === 0) {
       return res.status(404).json({ error: 'No se encontraron categorías' });
@@ -56,5 +57,25 @@ router.get('/ultimo-usuario', async (req, res) => {
     res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
-
+router.get('/categorias/:categoryId', async (req, res) => {
+  try {
+    const categoria = await Categoria.findByPk(req.params.categoryId);
+    if (!categoria) {
+      return res.status(404).json({ error: 'Categoría no encontrada' });
+    }
+    res.json({ data: categoria });
+  } catch (error) {
+    console.error('Error al obtener la categoría:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+});
+    router.get('/stats', async (req, res) => {
+  try {
+    const stats = await apiService.getStats();
+    res.json(stats);
+  } catch (error) {
+    console.error('Error al obtener las estadísticas:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+});
 module.exports = router;

@@ -5,10 +5,12 @@
           <img src="/img/logo.png" alt="Logo de TheGameStore" />
       </a>
   </div>
-    <div id="search-bar">
-      <input type="text" placeholder="Buscar..." />
-      <button type="submit">Buscar</button>
-    </div>
+  <div id="search-bar">
+    <form action="/products/search" method="GET" class="search-form">
+      <input type="text" name="query" placeholder="Buscar productos..." class="search-input">
+      <button type="submit" class="search-button">Buscar</button>
+    </form>
+</div>
    <div id="icons">
       <a href="/users/perfil">
         <img src="/img/usuario.png" alt="user" />

@@ -1,17 +1,11 @@
-/* Reset de estilos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
 
-.contenedorform {
+/* Estilos específicos del formulario */
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,18 +20,18 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.título {
+.form .título {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-.form-label {
+.form .form-label {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.form-input {
+.form .form-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -45,7 +39,7 @@ body {
     border-radius: 4px;
 }
 
-.buy-now-button {
+.form .buy-now-button {
     width: 100%;
     padding: 12px;
     background-color: #7400b8;
@@ -56,6 +50,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.buy-now-button:hover {
+.form .buy-now-button:hover {
     background-color: #45a049;
 }

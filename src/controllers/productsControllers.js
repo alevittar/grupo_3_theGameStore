@@ -180,6 +180,16 @@ const productosController = {
       console.error(error);
       res.status(500).send('Error interno del servidor');
     }
+  },
+  search: async (req, res) => {
+    const { query } = req.query;
+    try {
+      const productos = await productoService.search(query);
+      res.render('search', { productos });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error interno del servidor');
+    }
   }
 };
 

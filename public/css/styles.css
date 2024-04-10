@@ -201,13 +201,13 @@ header {
   height: 45px;
 }
 
-#search-bar input {
+#search-bar form input {
   width: 90%;
   padding: 10px;
   border-radius: 10px;
 }
 
-#search-bar button {
+#search-bar form button {
   padding: 5px 10px;
   background-color: #333;
   color: #fff;
@@ -331,8 +331,8 @@ a {
   #logo img{
     width: 100%;
   }
-#search-bar{
-  justify-content: center;
+#search-bar {
+    justify-content: center;
     width: 80%;
 }
   #icons {
@@ -459,7 +459,7 @@ a {
       flex-wrap: wrap;
       width: auto;
     }
-    #search-bar{
+    #search-bar form{
       display: flex;
       width: 45%;
     }
@@ -502,7 +502,7 @@ a {
     width: 33%;
     max-height: 350px;
    }
-#search-bar{
+#search-bar {
     justify-content: flex-end;
 }
 #search-bar {
@@ -535,7 +535,25 @@ nav ul li{
       max-width: 90%;
       height: auto;
     }
+    #search-bar form {
+      display: flex;
+      justify-content: center; 
+      width: 80%; 
+    }
   
+    #search-bar form input {
+      width: 1000%; 
+      padding: 10px; 
+      border-radius: 10px; 
+    }
+  
+    #search-bar form button {
+      padding: 5px 10px;
+      background-color: #333; 
+      color: #fff; 
+      border: none; 
+      border-radius: 10px;
+    }
     
 }
 @media screen and (min-width: 990px) {

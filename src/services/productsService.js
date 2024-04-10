@@ -1,4 +1,5 @@
 const { Producto, Categoria } = require('../database/models');
+const { Op } = require('sequelize');
 
 const productoService = {
   getAll: async () => {
@@ -80,6 +81,21 @@ const productoService = {
     } catch (error) {
       console.error('Error al obtener la categoría desde la base de datos:', error);
       throw new Error('Error al obtener la categoría desde la base de datos');
+    }
+  },
+  search: async (query) => { // Modificar para que reciba directamente el query
+    try {
+      const productos = await Producto.findAll({
+        where: {
+          name: {
+            [Op.like]: `%${query}%`
+          }
+        }
+      });
+      return productos; // Devolver los productos encontrados
+    } catch (error) {
+      console.error('Error al buscar productos en la base de datos:', error);
+      throw new Error('Error al buscar productos en la base de datos');
     }
   }
 };
