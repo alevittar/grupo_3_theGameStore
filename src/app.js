@@ -67,9 +67,8 @@ app.use('/products', productsRouter);
 app.use('/contacts', contactRoutes);
 app.use('/api', apiRoutes);
 app.use((req, res, next) => {
-  res.status(404).send("Error 404: Página no encontrada");
+  res.status(404).render('error404'); 
 });
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

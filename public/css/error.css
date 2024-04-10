@@ -1,0 +1,34 @@
+.error-container {
+    text-align: center;
+    margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .error-container h1 {
+    font-size: 2.5em; /* Tamaño de fuente grande para el título */
+  }
+  
+  .error-container img {
+    display: block; /* Centra la imagen horizontalmente */
+    margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontalmente */
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen para que no se desborde */
+  }
+  
+  .error-container p {
+    font-size: 1.2em; /* Tamaño de fuente para el mensaje de error */
+  }
+  
+  .error-container a {
+    display: inline-block; /* Convertir el enlace en un bloque para aplicar estilos de margen y acolchado */
+    margin-top: 20px; /* Ajusta el margen superior del enlace */
+    padding: 10px 20px; /* Agrega relleno al enlace */
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    text-decoration: none; /* Eliminar subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+  }
+  
+  .error-container a:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el mouse */
+  }
+  
