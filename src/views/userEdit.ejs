@@ -10,7 +10,7 @@
   <title>TheGameStore</title>
 </head>
 <body>
-  <% include('./partials/header') %>
+  <%- include('./partials/header') %>
 
   <main class="contenedorform">
     <form action="/users/editar/<%= usuario.id %>" method="POST" enctype="multipart/form-data">
@@ -47,6 +47,6 @@
     </form>
   </main>
 
-  <% include('./partials/footer') %>
+  <%- include('./partials/footer') %>
 </body>
 </html>
