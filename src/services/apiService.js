@@ -1,4 +1,4 @@
-const { Producto, Categoria, Usuario } = require('../database/models');
+const { Producto, Categoria, Usuario , Rol } = require('../database/models');
 
 const apiService = {
   getAll: async () => {
@@ -24,9 +24,10 @@ const apiService = {
   getAllUsuarios: async () => {
     try {
       const usuarios = await Usuario.findAll({
-        attributes: ['id', 'first_name', 'last_name', 'email', 'image', 'rol_id']
+        attributes: ['id', 'first_name', 'last_name', 'email', 'image', 'rol_id'],
+        include: { model: Rol, as: 'Rol', attributes: ['nombre'] } // Incluye la asociación con el modelo Rol
       });
-      return { data: usuarios }; // Envolver los usuarios dentro de un objeto con la clave "data"
+      return { data: usuarios };
     } catch (error) {
       console.error('Error al obtener todos los usuarios:', error);
       throw new Error('Error al obtener todos los usuarios');
